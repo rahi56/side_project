@@ -1,0 +1,1546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Citizenship Programs | KiteGlobalKG</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --text: #333;
+            --text-light: #7f8c8d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            color: var(--text);
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+        }
+        
+        .logo span {
+            color: var(--secondary);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1464037866556-6812c9d1c72e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 180px 0 100px;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background-color: #c0392b;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        /* Programs Section */
+        .programs-section {
+            padding: 80px 0;
+            background-color: #f9fafc;
+            background-image: linear-gradient(to bottom, #ffffff 0%, #f5f8ff 100%);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #1a2b6d;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #5a6a8a;
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto 50px;
+            line-height: 1.6;
+        }
+
+        .programs-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Program Category Cards */
+        .program-category {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .program-category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+        }
+
+        .category-header {
+            padding: 20px 25px;
+            background: linear-gradient(135deg, #1a2b6d 0%, #3a56b4 100%);
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .category-icon {
+            font-size: 1.5rem;
+        }
+
+        .category-title {
+            font-size: 1.3rem;
+            margin: 0;
+            flex-grow: 1;
+        }
+
+        .badge {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        /* Program Items */
+        .program-list {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        .program-item {
+            display: flex;
+            align-items: center;
+            padding: 20px 25px;
+            border-bottom: 1px solid #eef0f6;
+            text-decoration: none;
+            color: inherit;
+            transition: background-color 0.2s ease;
+            cursor: pointer;
+        }
+
+        .program-item:hover {
+            background-color: #f8faff;
+        }
+
+        .program-item:last-child {
+            border-bottom: none;
+        }
+
+        .program-flag {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-size: cover;
+            background-position: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+
+        /* Country Flag Classes */
+        .flag-lc { background-image: url('https://flagcdn.com/w80/lc.png'); }
+        .flag-ag { background-image: url('https://flagcdn.com/w80/ag.png'); }
+        .flag-kn { background-image: url('https://flagcdn.com/w80/kn.png'); }
+        .flag-gd { background-image: url('https://flagcdn.com/w80/gd.png'); }
+        .flag-dm { background-image: url('https://flagcdn.com/w80/dm.png'); }
+        .flag-nr { background-image: url('https://flagcdn.com/w80/nr.png'); }
+        .flag-vu { background-image: url('https://flagcdn.com/w80/vu.png'); }
+        .flag-tr { background-image: url('https://flagcdn.com/w80/tr.png'); }
+        .flag-mt { background-image: url('https://flagcdn.com/w80/mt.png'); }
+
+        .program-info {
+            flex-grow: 1;
+        }
+
+        .program-name {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #1a2b6d;
+            margin: 0 0 8px 0;
+        }
+
+        .program-details {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 12px;
+            font-size: 0.9rem;
+        }
+
+        .price {
+            color: #3a56b4;
+            font-weight: 600;
+        }
+
+        .timeline {
+            color: #5a6a8a;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .program-benefits {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .program-benefits li {
+            font-size: 0.85rem;
+            color: #5a6a8a;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            width: calc(50% - 5px);
+        }
+
+        .program-benefits i {
+            color: #3a56b4;
+            font-size: 0.9rem;
+        }
+
+        .program-arrow {
+            color: #c2cbe0;
+            font-size: 1.1rem;
+            transition: transform 0.2s ease, color 0.2s ease;
+        }
+
+        .program-item:hover .program-arrow {
+            color: #3a56b4;
+            transform: translateX(3px);
+        }
+
+        /* Program Details Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.8);
+            z-index: 2000;
+            overflow-y: auto;
+            padding: 20px;
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: 50px auto;
+            max-width: 800px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 30px rgba(0,0,0,0.3);
+            animation: modalFadeIn 0.3s ease;
+        }
+
+        @keyframes modalFadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .modal-header {
+            padding: 20px;
+            background: linear-gradient(135deg, #1a2b6d 0%, #3a56b4 100%);
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .modal-flag {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-size: cover;
+            background-position: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .modal-title {
+            flex-grow: 1;
+        }
+
+        .modal-title h2 {
+            margin: 0;
+            font-size: 1.5rem;
+        }
+
+        .modal-title p {
+            margin: 5px 0 0;
+            opacity: 0.9;
+            font-size: 0.9rem;
+        }
+
+        .close-modal {
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .modal-body {
+            padding: 25px;
+        }
+
+        .program-highlights {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .highlight-card {
+            background: #f8faff;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .highlight-card h4 {
+            color: #3a56b4;
+            margin-bottom: 10px;
+            font-size: 1rem;
+        }
+
+        .highlight-card p {
+            font-weight: 600;
+            color: #1a2b6d;
+            margin: 0;
+            font-size: 1.1rem;
+        }
+
+        .program-description {
+            margin-bottom: 30px;
+        }
+
+        .program-description h3 {
+            color: #1a2b6d;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .program-description p {
+            margin-bottom: 15px;
+            line-height: 1.7;
+        }
+
+        .requirements-list {
+            margin-bottom: 30px;
+        }
+
+        .requirements-list h3 {
+            color: #1a2b6d;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .requirements-list ul {
+            padding-left: 20px;
+        }
+
+        .requirements-list li {
+            margin-bottom: 10px;
+        }
+
+        .modal-footer {
+            padding: 20px;
+            background: #f5f7fa;
+            text-align: center;
+        }
+
+        /* Closed Program Styling */
+        .program-closed {
+            opacity: 0.7;
+            pointer-events: none;
+        }
+
+        .status-badge {
+            background: #e74c3c;
+            color: white;
+            padding: 3px 10px;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 8px;
+        }
+
+        .program-notice {
+            font-size: 0.8rem;
+            color: #e74c3c;
+            background: #fdecea;
+            padding: 8px 12px;
+            border-radius: 6px;
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Call to Action */
+        .programs-cta {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .cta-text {
+            font-size: 1.1rem;
+            color: #5a6a8a;
+            margin-bottom: 20px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #3a56b4 0%, #1a2b6d 100%);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: 0 4px 15px rgba(58, 86, 180, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(58, 86, 180, 0.4);
+        }
+
+        /* Resources Section */
+        .resources-section {
+            padding: 60px 0;
+            background-color: var(--light);
+        }
+        
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .resource-card {
+            background-color: white;
+            border-radius: 5px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .resource-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .resource-card h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+        
+        .resource-card p {
+            color: var(--text-light);
+            margin-bottom: 15px;
+        }
+        
+        /* Contact Section */
+        .contact-section {
+            padding: 80px 0;
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .contact-container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .contact-form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group.full-width {
+            grid-column: span 2;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            text-align: left;
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px 15px;
+            border-radius: 5px;
+            border: none;
+            font-size: 1rem;
+        }
+        
+        .form-group textarea {
+            min-height: 120px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 50px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+        
+        .footer-column ul {
+            list-style-type: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-column ul li a {
+            color: var(--light);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-column ul li a:hover {
+            color: var(--secondary);
+        }
+        
+        .social-links a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            color: white;
+            margin-right: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background: var(--secondary);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: var(--light);
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 150px 0 80px;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .programs-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-form {
+                grid-template-columns: 1fr;
+            }
+            
+            .form-group.full-width {
+                grid-column: span 1;
+            }
+            
+            .modal-content {
+                margin: 20px auto;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .program-details {
+                flex-direction: column;
+                gap: 5px;
+            }
+            
+            .program-benefits li {
+                width: 100%;
+            }
+            
+            .modal-header {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .modal-title {
+                margin-top: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo">Kite<span>Global</span>KG</a>
+                <nav>
+                    <a href="#contact" class="btn">Free Consultation</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>Global Citizenship Programs</h1>
+            <p>Explore citizenship by investment opportunities in Caribbean nations and beyond. Obtain second citizenship through government-approved investments.</p>
+            <a href="#programs" class="btn">View Programs</a>
+        </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section class="programs-section" id="programs">
+        <div class="container">
+            <h2 class="section-title">Global Citizenship Investment Programs</h2>
+            <p class="section-subtitle">Unlock world-class opportunities through strategic investment migration</p>
+            
+            <div class="programs-container">
+                <!-- Caribbean Programs -->
+                <div class="program-category card">
+                    <div class="category-header">
+                        <i class="fas fa-umbrella-beach category-icon"></i>
+                        <h3 class="category-title">Caribbean Citizenship</h3>
+                        <span class="badge">5 Programs Available</span>
+                    </div>
+                    <div class="program-list">
+                        <div class="program-item" onclick="openModal('st-lucia')">
+                            <div class="program-flag flag-lc"></div>
+                            <div class="program-info">
+                                <h4 class="program-name">St. Lucia Citizenship</h4>
+                                <div class="program-details">
+                                    <span class="price">From $100,000</span>
+                                    <span class="timeline"><i class="far fa-clock"></i> 3-4 months</span>
+                                </div>
+                                <ul class="program-benefits">
+                                    <li><i class="fas fa-check-circle"></i> Visa-free to 146 countries</li>
+                                    <li><i class="fas fa-check-circle"></i> No residency requirement</li>
+                                    <li><i class="fas fa-check-circle"></i> Family inclusion option</li>
+                                </ul>
+                            </div>
+                            <i class="fas fa-chevron-right program-arrow"></i>
+                        </div>
+                        
+                        <div class="program-item" onclick="openModal('antigua')">
+                            <div class="program-flag flag-ag"></div>
+                            <div class="program-info">
+                                <h4 class="program-name">Antigua & Barbuda</h4>
+                                <div class="program-details">
+                                    <span class="price">From $100,000</span>
+                                    <span class="timeline"><i class="far fa-clock"></i> 4-6 months</span>
+                                </div>
+                                <ul class="program-benefits">
+                                    <li><i class="fas fa-check-circle"></i> Visa-free to 150+ countries</li>
+                                    <li><i class="fas fa-check-circle"></i> 5-year passport validity</li>
+                                    <li><i class="fas fa-check-circle"></i> Tax-friendly regime</li>
+                                </ul>
+                            </div>
+                            <i class="fas fa-chevron-right program-arrow"></i>
+                        </div>
+                        
+                        <div class="program-item" onclick="openModal('st-kitts')">
+                            <div class="program-flag flag-kn"></div>
+                            <div class="program-info">
+                                <h4 class="program-name">St. Kitts & Nevis</h4>
+                                <div class="program-details">
+                                    <span class="price">From $250,000</span>
+                                    <span class="timeline"><i class="far fa-clock"></i> 60-day fast track</span>
+                                </div>
+                                <ul class="program-benefits">
+                                    <li><i class="fas fa-check-circle"></i> World's longest-running CBI program</li>
+                                    <li><i class="fas fa-check-circle"></i> Visa-free to 157 countries</li>
+                                    <li><i class="fas fa-check-circle"></i> Lifetime citizenship</li>
+                                </ul>
+                            </div>
+                            <i class="fas fa-chevron-right program-arrow"></i>
+                        </div>
+                        
+                        <div class="program-item" onclick="openModal('grenada')">
+                            <div class="program-flag flag-gd"></div>
+                            <div class="program-info">
+                                <h4 class="program-name">Grenada</h4>
+                                <div class="program-details">
+                                    <span class="price">From $150,000</span>
+                                    <span class="timeline"><i class="far fa-clock"></i> 4-6 months</span>
+                                </div>
+                                <ul class="program-benefits">
+                                    <li><i class="fas fa-check-circle"></i> US E-2 visa eligibility</li>
+                                    <li><i class="fas fa-check-circle"></i> Visa-free to China & Russia</li>
+                                    <li><i class="fas fa-check-circle"></i> Real estate investment option</li>
+                                </ul>
+                            </div>
+                            <i class="fas fa-chevron-right program-arrow"></i>
+                        </div>
+                        
+                        <div class="program-item" onclick="openModal('dominica')">
+                            <div class="program-flag flag-dm"></div>
+                            <div class="program-info">
+                                <h4 class="program-name">Dominica</h4>
+                                <div class="program-details">
+                                    <span class="price">From $100,000</span>
+                                    <span class="timeline"><i class="far fa-clock"></i> 3-4 months</span>
+                                </div>
+                                <ul class="program-benefits">
+                                    <li><i class="fas fa-check-circle"></i> Most affordable CBI program</li>
+                                    <li><i class="fas fa-check-circle"></i> No interview or language test</li>
+                                    <li><i class="fas fa-check-circle"></i> Commonwealth membership</li>
+                                </ul>
+                            </div>
+                            <i class="fas fa-chevron-right program-arrow"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Non-Caribbean Programs -->
+                <div class="program-category card">
+                    <div class="category-header">
+                        <i class="fas fa-globe-americas category-icon"></i>
+                        <h3 class="category-title">Global Citizenship</h3>
+                        <span class="badge">4 Programs Available</span>
+                    </div>
+                    <div class="program-list">
+                        <div class="program-item" onclick="openModal('nauru')">
+                            <div class="program-flag flag-nr"></div>
+                            <div class="program-info">
+                                <h4 class="program-name">Nauru</h4>
+                                <div class="program-details">
+                                    <span class="price">From $50,000</span>
+                                    <span class="timeline"><i class="far fa-clock"></i> 3-6 months</span>
+                                </div>
+                                <ul class="program-benefits">
+                                    <li><i class="fas fa-check-circle"></i> Pacific island nation</li>
+                                    <li><i class="fas fa-check-circle"></i> Tax optimization</li>
+                                    <li><i class="fas fa-check-circle"></i> Commonwealth citizenship</li>
+                                </ul>
+                            </div>
+                            <i class="fas fa-chevron-right program-arrow"></i>
+                        </div>
+                        
+                        <div class="program-item" onclick="openModal('vanuatu')">
+                            <div class="program-flag flag-vu"></div>
+                            <div class="program-info">
+                                <h4 class="program-name">Vanuatu</h4>
+                                <div class="program-details">
+                                    <span class="price">From $130,000</span>
+                                    <span class="timeline"><i class="far fa-clock"></i> 1-2 months</span>
+                                </div>
+                                <ul class="program-benefits">
+                                    <li><i class="fas fa-check-circle"></i> Fastest processing worldwide</li>
+                                    <li><i class="fas fa-check-circle"></i> Visa-free to EU Schengen area</li>
+                                    <li><i class="fas fa-check-circle"></i> No tax on worldwide income</li>
+                                </ul>
+                            </div>
+                            <i class="fas fa-chevron-right program-arrow"></i>
+                        </div>
+                        
+                        <div class="program-item" onclick="openModal('turkey')">
+                            <div class="program-flag flag-tr"></div>
+                            <div class="program-info">
+                                <h4 class="program-name">Turkey</h4>
+                                <div class="program-details">
+                                    <span class="price">From $400,000</span>
+                                    <span class="timeline"><i class="far fa-clock"></i> 3-4 months</span>
+                                </div>
+                                <ul class="program-benefits">
+                                    <li><i class="fas fa-check-circle"></i> E-2 visa treaty with US</li>
+                                    <li><i class="fas fa-check-circle"></i> Real estate investment</li>
+                                    <li><i class="fas fa-check-circle"></i> Strategic Eurasian location</li>
+                                </ul>
+                            </div>
+                            <i class="fas fa-chevron-right program-arrow"></i>
+                        </div>
+                        
+                        <div class="program-item program-closed">
+                            <div class="program-flag flag-mt"></div>
+                            <div class="program-info">
+                                <h4 class="program-name">Malta Citizenship</h4>
+                                <span class="status-badge">Program Closed</span>
+                                <div class="program-details">
+                                    <span class="price">Previously €690,000+</span>
+                                    <span class="timeline">EU Citizenship</span>
+                                </div>
+                                <div class="program-notice">
+                                    <i class="fas fa-info-circle"></i> Malta's citizenship program has been discontinued as of 2020
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="programs-cta">
+                <p class="cta-text">Not sure which program is right for you?</p>
+                <a href="#contact" class="btn btn-primary">Get Free Consultation</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section class="resources-section" id="resources">
+        <div class="container">
+            <h2 class="section-title">Resources</h2>
+            
+            <div class="resources-grid">
+                <div class="resource-card">
+                    <h3>Citizenship by Investment Overview</h3>
+                    <p>Learn how citizenship by investment programs work and what to expect from the process.</p>
+                    <a href="#" class="btn" onclick="openResourceModal('cbi-overview')">Read Guide</a>
+                </div>
+                
+                <div class="resource-card">
+                    <h3>Benefits of Dual Citizenship</h3>
+                    <p>Discover the advantages of holding multiple passports for travel, business and lifestyle.</p>
+                    <a href="#" class="btn" onclick="openResourceModal('dual-citizenship')">Explore Benefits</a>
+                </div>
+                
+                <div class="resource-card">
+                    <h3>How to Choose the Right Agent</h3>
+                    <p>Important factors to consider when selecting a citizenship by investment agent.</p>
+                    <a href="#" class="btn" onclick="openResourceModal('choose-agent')">Learn More</a>
+                </div>
+                
+                <div class="resource-card">
+                    <h3>Passport Index</h3>
+                    <p>Compare passport strength and visa-free access across different countries.</p>
+                    <a href="#" class="btn" onclick="openResourceModal('passport-index')">View Rankings</a>
+                </div>
+                
+                <div class="resource-card">
+                    <h3>Program Comparison Tool</h3>
+                    <p>Interactive tool to compare all citizenship by investment programs side-by-side.</p>
+                    <a href="#" class="btn" onclick="openResourceModal('comparison-tool')">Compare Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   
+    
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>KiteGlobalKG</h3>
+                    <p>Professional immigration consultants specializing in citizenship by investment programs worldwide.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#programs">Programs</a></li>
+                        <li><a href="#resources">Resources</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Business Bay, Dubai</li>
+                        <li><i class="fas fa-phone"></i> +971 056 468 0624</li>
+                        <li><i class="fas fa-envelope"></i> info@kiteglobalkg.com</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 KiteGlobalKG. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Program Detail Modals -->
+    <div id="st-lucia-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-flag flag-lc"></div>
+                <div class="modal-title">
+                    <h2>St. Lucia Citizenship by Investment</h2>
+                    <p>Caribbean Citizenship Program</p>
+                </div>
+                                <span class="close-modal" onclick="closeModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="program-highlights">
+                    <div class="highlight-card">
+                        <h4>Minimum Investment</h4>
+                        <p>$100,000</p>
+                    </div>
+                    <div class="highlight-card">
+                        <h4>Processing Time</h4>
+                        <p>3-4 months</p>
+                    </div>
+                    <div class="highlight-card">
+                        <h4>Visa-Free Access</h4>
+                        <p>146 countries</p>
+                    </div>
+                    <div class="highlight-card">
+                        <h4>Family Inclusion</h4>
+                        <p>Up to 4 dependents</p>
+                    </div>
+                </div>
+                
+                <div class="program-description">
+                    <h3>Program Overview</h3>
+                    <p>The St. Lucia Citizenship by Investment Program was established in 2015 and offers investors and their families the opportunity to obtain St. Lucian citizenship through a government-approved investment. The program is known for its efficiency, transparency, and the high quality of its due diligence process.</p>
+                    <p>St. Lucia is an English-speaking Caribbean nation with a stable democracy and strong economic growth. Citizenship provides visa-free access to key business and travel destinations including the UK, Schengen Zone, and Hong Kong.</p>
+                </div>
+                
+                <div class="requirements-list">
+                    <h3>Investment Options</h3>
+                    <ul>
+                        <li><strong>National Economic Fund:</strong> $100,000 single applicant (minimum)</li>
+                        <li><strong>Real Estate:</strong> $300,000 minimum investment in approved projects</li>
+                        <li><strong>Government Bonds:</strong> $250,000 minimum investment (5-year holding)</li>
+                        <li><strong>Enterprise Project:</strong> $3.5 million minimum investment (joint ventures $6 million)</li>
+                    </ul>
+                    
+                    <h3>Requirements</h3>
+                    <ul>
+                        <li>Clean criminal record</li>
+                        <li>Proof of legitimate source of funds</li>
+                        <li>Good health</li>
+                        <li>Minimum age of 18 years</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a href="#contact" class="btn btn-primary" onclick="closeModal()">Request More Information</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="antigua-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-flag flag-ag"></div>
+                <div class="modal-title">
+                    <h2>Antigua & Barbuda Citizenship</h2>
+                    <p>Caribbean Investment Program</p>
+                </div>
+                <span class="close-modal" onclick="closeModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="program-highlights">
+                    <div class="highlight-card">
+                        <h4>Minimum Investment</h4>
+                        <p>$100,000</p>
+                    </div>
+                    <div class="highlight-card">
+                        <h4>Processing Time</h4>
+                        <p>4-6 months</p>
+                    </div>
+                    <div class="highlight-card">
+                        <h4>Visa-Free Access</h4>
+                        <p>150+ countries</p>
+                    </div>
+                    <div class="highlight-card">
+                        <h4>Residency Requirement</h4>
+                        <p>5 days in 5 years</p>
+                    </div>
+                </div>
+                
+                <div class="program-description">
+                    <h3>Program Overview</h3>
+                    <p>The Antigua & Barbuda Citizenship by Investment Program was launched in 2013 and offers one of the most cost-effective routes to second citizenship in the Caribbean. The program is particularly attractive for families as it allows inclusion of up to 4 dependents under a single application.</p>
+                    <p>Antigua & Barbuda is known for its beautiful beaches, stable political environment, and growing economy. The citizenship provides excellent global mobility including visa-free access to the UK, EU Schengen zone, and many Commonwealth countries.</p>
+                </div>
+                
+                <div class="requirements-list">
+                    <h3>Investment Options</h3>
+                    <ul>
+                        <li><strong>National Development Fund:</strong> $100,000 single applicant (minimum)</li>
+                        <li><strong>Real Estate:</strong> $200,000 minimum investment in approved projects</li>
+                        <li><strong>University of West Indies Fund:</strong> $150,000 family of six</li>
+                        <li><strong>Business Investment:</strong> $1.5 million minimum investment</li>
+                    </ul>
+                    
+                    <h3>Requirements</h3>
+                    <ul>
+                        <li>Clean criminal record</li>
+                        <li>Proof of legitimate source of funds</li>
+                        <li>Medical certificate</li>
+                        <li>Minimum visit requirement (5 days within first 5 years)</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a href="#contact" class="btn btn-primary" onclick="closeModal()">Request More Information</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="st-kitts-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-flag flag-kn"></div>
+                <div class="modal-title">
+                    <h2>St. Kitts & Nevis Citizenship</h2>
+                    <p>Pioneering Investment Program</p>
+                </div>
+                <span class="close-modal" onclick="closeModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="program-highlights">
+                    <div class="highlight-card">
+                        <h4>Minimum Investment</h4>
+                        <p>$250,000</p>
+                    </div>
+                    <div class="highlight-card">
+                        <h4>Processing Time</h4>
+                        <p>60-day fast track</p>
+                    </div>
+                    <div class="highlight-card">
+                        <h4>Visa-Free Access</h4>
+                        <p>157 countries</p>
+                    </div>
+                    <div class="highlight-card">
+                        <h4>Program Established</h4>
+                        <p>1984</p>
+                    </div>
+                </div>
+                
+                <div class="program-description">
+                    <h3>Program Overview</h3>
+                    <p>The St. Kitts & Nevis Citizenship by Investment Program is the world's longest-running economic citizenship program, established in 1984. It offers investors and their families the opportunity to obtain citizenship through either a contribution to the Sustainable Growth Fund or through real estate investment.</p>
+                    <p>St. Kitts & Nevis is a stable democracy with a strong tourism-based economy. The citizenship provides excellent global mobility including visa-free access to the UK, EU Schengen zone, Russia, and many other key business and travel destinations.</p>
+                </div>
+                
+                <div class="requirements-list">
+                    <h3>Investment Options</h3>
+                    <ul>
+                        <li><strong>Sustainable Growth Fund:</strong> $250,000 single applicant (minimum)</li>
+                        <li><strong>Real Estate:</strong> $400,000 minimum investment in approved projects</li>
+                        <li><strong>Public Benefit Option:</strong> $175,000 minimum contribution</li>
+                    </ul>
+                    
+                    <h3>Requirements</h3>
+                    <ul>
+                        <li>Clean criminal record</li>
+                        <li>Proof of legitimate source of funds</li>
+                        <li>Medical certificate</li>
+                        <li>No residency requirement</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a href="#contact" class="btn btn-primary" onclick="closeModal()">Request More Information</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="grenada-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-flag flag-gd"></div>
+                <div class="modal-title">
+                    <h2>Grenada Citizenship</h2>
+                    <p>Caribbean Program with US E-2 Eligibility</p>
+                </div>
+                <span class="close-modal" onclick="closeModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="program-highlights">
+                    <div class="highlight-card">
+                        <h4>Minimum Investment</h4>
+                        <p>$150,000</p>
+                    </div>
+                    <div class="highlight-card">
+                        <h4>Processing Time</h4>
+                        <p>4-6 months</p>
+                    </div>
+                    <div class="highlight-card">
+                        <h4>Visa-Free Access</h4>
+                        <p>144 countries</p>
+                    </div>
+                    <div class="highlight-card">
+                        <h4>US E-2 Eligibility</h4>
+                        <p>Yes</p>
+                    </div>
+                </div>
+                
+                <div class="program-description">
+                    <h3>Program Overview</h3>
+                    <p>The Grenada Citizenship by Investment Program was re-launched in 2013 with enhanced features. Grenada is the only Caribbean country with a citizenship program that offers eligibility for the US E-2 Investor Visa, making it particularly attractive for investors seeking access to the United States.</p>
+                    <p>Grenada is known as the "Spice Isle" and offers a stable political environment, growing economy, and beautiful natural scenery. The citizenship provides visa-free access to China, Russia, the UK, and the EU Schengen zone among others.</p>
+                </div>
+                
+                <div class="requirements-list">
+                    <h3>Investment Options</h3>
+                    <ul>
+                        <li><strong>National Transformation Fund:</strong> $150,000 single applicant (minimum)</li>
+                        <li><strong>Real Estate:</strong> $220,000 minimum investment in approved projects</li>
+                    </ul>
+                    
+                    <h3>Requirements</h3>
+                    <ul>
+                        <li>Clean criminal record</li>
+                        <li>Proof of legitimate source of funds</li>
+                        <li>Medical certificate</li>
+                        <li>No residency requirement</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a href="#contact" class="btn btn-primary" onclick="closeModal()">Request More Information</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="dominica-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-flag flag-dm"></div>
+                <div class="modal-title">
+                    <h2>Dominica Citizenship</h2>
+                    <p>Most Affordable Caribbean Program</p>
+                </div>
+                <span class="close-modal" onclick="closeModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="program-highlights">
+                    <div class="highlight-card">
+                        <h4>Minimum Investment</h4>
+                        <p>$100,000</p>
+                    </div>
+                    <div class="highlight-card">
+                        <h4>Processing Time</h4>
+                        <p>3-4 months</p>
+                    </div>
+                    <div class="highlight-card">
+                        <h4>Visa-Free Access</h4>
+                        <p>140+ countries</p>
+                    </div>
+                    <div class="highlight-card">
+                        <h4>Commonwealth</h4>
+                        <p>Yes</p>
+                    </div>
+                </div>
+                
+                <div class="program-description">
+                    <h3>Program Overview</h3>
+                    <p>The Dominica Citizenship by Investment Program was established in 1993 and offers one of the most affordable routes to second citizenship. The program is known for its straightforward process, strong due diligence, and commitment to sustainable development through its Economic Diversification Fund.</p>
+                    <p>Dominica is known as the "Nature Isle of the Caribbean" and offers a peaceful environment with a focus on eco-tourism. The citizenship provides visa-free access to the UK, EU Schengen zone, Russia, and many other countries.</p>
+                </div>
+                
+                <div class="requirements-list">
+                    <h3>Investment Options</h3>
+                    <ul>
+                        <li><strong>Economic Diversification Fund:</strong> $100,000 single applicant (minimum)</li>
+                        <li><strong>Real Estate:</strong> $200,000 minimum investment in approved projects</li>
+                    </ul>
+                    
+                    <h3>Requirements</h3>
+                    <ul>
+                        <li>Clean criminal record</li>
+                        <li>Proof of legitimate source of funds</li>
+                        <li>Medical certificate</li>
+                        <li>No residency requirement</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a href="#contact" class="btn btn-primary" onclick="closeModal()">Request More Information</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="nauru-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-flag flag-nr"></div>
+                <div class="modal-title">
+                    <h2>Nauru Citizenship</h2>
+                    <p>Pacific Island Investment Program</p>
+                </div>
+                <span class="close-modal" onclick="closeModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="program-highlights">
+                    <div class="highlight-card">
+                        <h4>Minimum Investment</h4>
+                        <p>$50,000</p>
+                    </div>
+                    <div class="highlight-card">
+                        <h4>Processing Time</h4>
+                        <p>3-6 months</p>
+                    </div>
+                    <div class="highlight-card">
+                        <h4>Commonwealth</h4>
+                        <p>Yes</p>
+                    </div>
+                    <div class="highlight-card">
+                        <h4>Tax Benefits</h4>
+                        <p>Significant</p>
+                    </div>
+                </div>
+                
+                <div class="program-description">
+                    <h3>Program Overview</h3>
+                    <p>The Nauru Citizenship by Investment Program offers one of the most affordable routes to second citizenship in the Pacific region. Nauru is a small island nation with a stable political environment and membership in the Commonwealth.</p>
+                    <p>This program is particularly attractive for investors seeking tax optimization opportunities and Commonwealth citizenship. The process is straightforward with minimal residency requirements.</p>
+                </div>
+                
+                <div class="requirements-list">
+                    <h3>Investment Options</h3>
+                    <ul>
+                        <li><strong>Government Contribution:</strong> $50,000 single applicant (minimum)</li>
+                        <li><strong>Business Investment:</strong> $100,000 minimum investment in approved sectors</li>
+                    </ul>
+                    
+                    <h3>Requirements</h3>
+                    <ul>
+                        <li>Clean criminal record</li>
+                        <li>Proof of legitimate source of funds</li>
+                        <li>Basic health insurance</li>
+                        <li>No residency requirement</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a href="#contact" class="btn btn-primary" onclick="closeModal()">Request More Information</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="vanuatu-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-flag flag-vu"></div>
+                <div class="modal-title">
+                    <h2>Vanuatu Citizenship</h2>
+                    <p>Fastest Processing Worldwide</p>
+                </div>
+                <span class="close-modal" onclick="closeModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="program-highlights">
+                    <div class="highlight-card">
+                        <h4>Minimum Investment</h4>
+                        <p>$130,000</p>
+                    </div>
+                    <div class="highlight-card">
+                        <h4>Processing Time</h4>
+                        <p>1-2 months</p>
+                    </div>
+                    <div class="highlight-card">
+                        <h4>Visa-Free Access</h4>
+                        <p>129 countries</p>
+                    </div>
+                    <div class="highlight-card">
+                        <h4>Taxation</h4>
+                        <p>No worldwide tax</p>
+                    </div>
+                </div>
+                
+                <div class="program-description">
+                    <h3>Program Overview</h3>
+                    <p>The Vanuatu Citizenship by Investment Program offers the fastest processing time of any citizenship program worldwide, with approvals possible in as little as 30 days. Vanuatu is a Pacific island nation with a stable political environment and favorable tax regime.</p>
+                    <p>This program is particularly attractive for investors seeking quick citizenship with visa-free access to the EU Schengen area, UK, Russia, and other key destinations. Vanuatu imposes no tax on worldwide income, capital gains, or inheritance.</p>
+                </div>
+                
+                <div class="requirements-list">
+                    <h3>Investment Options</h3>
+                    <ul>
+                        <li><strong>Government Contribution:</strong> $130,000 single applicant (minimum)</li>
+                    </ul>
+                    
+                    <h3>Requirements</h3>
+                    <ul>
+                        <li>Clean criminal record</li>
+                        <li>Proof of legitimate source of funds</li>
+                        <li>Health certificate</li>
+                        <li>No residency requirement</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a href="#contact" class="btn btn-primary" onclick="closeModal()">Request More Information</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="turkey-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-flag flag-tr"></div>
+                <div class="modal-title">
+                    <h2>Turkey Citizenship</h2>
+                    <p>Real Estate Investment Program</p>
+                </div>
+                <span class="close-modal" onclick="closeModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="program-highlights">
+                    <div class="highlight-card">
+                        <h4>Minimum Investment</h4>
+                        <p>$400,000</p>
+                    </div>
+                    <div class="highlight-card">
+                        <h4>Processing Time</h4>
+                        <p>3-4 months</p>
+                    </div>
+                    <div class="highlight-card">
+                        <h4>Visa-Free Access</h4>
+                        <p>110+ countries</p>
+                    </div>
+                    <div class="highlight-card">
+                        <h4>US E-2 Eligibility</h4>
+                        <p>Yes</p>
+                    </div>
+                </div>
+                
+                <div class="program-description">
+                    <h3>Program Overview</h3>
+                    <p>The Turkey Citizenship by Investment Program offers investors the opportunity to obtain Turkish citizenship through real estate investment. Turkey is a strategically located country bridging Europe and Asia, with a growing economy and vibrant culture.</p>
+                    <p>This program is particularly attractive for investors seeking citizenship in a G20 country with eligibility for the US E-2 Investor Visa. The real estate investment can be held for just 3 years before being eligible for resale.</p>
+                </div>
+                
+                <div class="requirements-list">
+                    <h3>Investment Options</h3>
+                    <ul>
+                        <li><strong>Real Estate:</strong> $400,000 minimum investment (must be held for 3 years)</li>
+                        <li><strong>Capital Investment:</strong> $500,000 minimum</li>
+                        <li><strong>Bank Deposit:</strong> $500,000 minimum (3-year term)</li>
+                        <li><strong>Government Bonds:</strong> $500,000 minimum (3-year term)</li>
+                    </ul>
+                    
+                    <h3>Requirements</h3>
+                    <ul>
+                        <li>Clean criminal record</li>
+                        <li>Proof of legitimate source of funds</li>
+                        <li>Property valuation report from approved appraiser</li>
+                        <li>No residency requirement</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a href="#contact" class="btn btn-primary" onclick="closeModal()">Request More Information</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Resource Modals -->
+    <div id="cbi-overview-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <i class="fas fa-passport category-icon"></i>
+                <div class="modal-title">
+                    <h2>Citizenship by Investment Overview</h2>
+                    <p>Understanding the Process</p>
+                </div>
+                <span class="close-modal" onclick="closeModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="program-description">
+                    <h3>What is Citizenship by Investment?</h3>
+                    <p>Citizenship by Investment (CBI) programs allow qualified individuals to obtain citizenship in a country by making a significant economic contribution. These government-approved programs provide a legal pathway to second citizenship and often include benefits like visa-free travel, tax optimization, and family security.</p>
+                    
+                    <h3>How the Process Works</h3>
+                    <p>The typical citizenship by investment process involves:</p>
+                    <ol>
+                        <li><strong>Program Selection:</strong> Choosing the right program based on your budget, timeline, and objectives</li>
+                        <li><strong>Application Preparation:</strong> Gathering required documents and completing forms</li>
+                        <li><strong>Due Diligence:</strong> Background checks conducted by the government</li>
+                        <li><strong>Investment:</strong> Making the approved financial contribution</li>
+                        <li><strong>Approval:</strong> Receiving citizenship certificate and passport</li>
+                    </ol>
+                    
+                    <h3>Key Considerations</h3>
+                    <ul>
+                        <li><strong>Legitimacy:</strong> Only consider government-approved programs</li>
+                        <li><strong>Due Diligence:</strong> All reputable programs conduct background checks</li>
+                        <li><strong>Professional Guidance:</strong> Work with licensed agents for proper advice</li>
+                        <li><strong>Tax Implications:</strong> Consult tax professionals about your specific situation</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a href="#contact" class="btn btn-primary" onclick="closeModal()">Get Personalized Advice</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // Open program modal
+        function openModal(program) {
+            document.getElementById(program + '-modal').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+        
+        // Open resource modal
+        function openResourceModal(resource) {
+            document.getElementById(resource + '-modal').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+        
+        // Close modal
+        function closeModal() {
+            const modals = document.querySelectorAll('.modal');
+            modals.forEach(modal => {
+                modal.style.display = 'none';
+            });
+            document.body.style.overflow = 'auto';
+        }
+        
+        // Close when clicking outside modal content
+        window.onclick = function(event) {
+            const modals = document.querySelectorAll('.modal');
+            modals.forEach(modal => {
+                if (event.target == modal) {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        }
+        
+        // Form submission
+        document.querySelector('.contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your inquiry! Our team will contact you shortly.');
+            this.reset();
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
