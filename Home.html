@@ -521,6 +521,137 @@
                 padding: 40px 0;
             }
         }
+        
+        
+        
+        
+     /* Updated Service Boxes - All Same Color */
+.service-item {
+    background: linear-gradient(135deg, #4361ee, #3a0ca3);
+    border-radius: 12px;
+    padding: 30px 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(67, 97, 238, 0.3);
+    width: 100%;
+    max-width: 300px;
+    color: white;
+    text-decoration: none !important;
+    margin: 10px 0;
+    position: relative;
+    overflow: hidden;
+    border: none;
+}
+
+/* All boxes same color */
+.service-item:nth-child(1),
+.service-item:nth-child(2),
+.service-item:nth-child(3),
+.service-item:nth-child(4),
+.service-item:nth-child(5),
+.service-item:nth-child(6) {
+    background: linear-gradient(135deg, #4361ee, #3a0ca3);
+}
+
+.service-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(67, 97, 238, 0.4);
+    background: linear-gradient(135deg, #3a0ca3, #4361ee);
+}
+
+.service-icon {
+    background: rgba(255, 255, 255, 0.2) !important;
+    backdrop-filter: blur(5px);
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 2rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.service-item:hover .service-icon {
+    transform: scale(1.1);
+    background: rgba(255, 255, 255, 0.3) !important;
+}
+
+.service-title {
+    color: white;
+    font-size: 1.3rem;
+    margin: 0 0 12px 0;
+    font-weight: 600;
+    line-height: 1.4;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Enhanced Dropdown Menu to Match */
+.dropdown-menu {
+    border: none;
+    box-shadow: 0 10px 25px rgba(67, 97, 238, 0.2);
+    border-radius: 12px;
+    padding: 10px 0;
+    margin-top: 8px;
+    background: white;
+    animation: fadeIn 0.3s ease;
+    border-left: 4px solid #4361ee;
+}
+
+.dropdown-item {
+    padding: 12px 25px;
+    color: #3a0ca3 !important;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.dropdown-item i {
+    margin-right: 10px;
+    width: 20px;
+    text-align: center;
+    color: #4361ee;
+}
+
+.dropdown-item:hover {
+    background: linear-gradient(to right, rgba(67, 97, 238, 0.1), transparent);
+    color: #3a0ca3 !important;
+    padding-left: 30px;
+}
+
+.dropdown-item:hover i {
+    color: #3a0ca3;
+}
+
+.dropdown-divider {
+    margin: 5px 20px;
+    border-top: 1px dashed rgba(67, 97, 238, 0.2);
+}
+
+/* Mobile adjustments */
+@media (max-width: 991.98px) {
+    .service-item {
+        padding: 25px 15px;
+    }
+    
+    .service-icon {
+        width: 70px;
+        height: 70px;
+        font-size: 1.8rem;
+    }
+}   
+        
+        
+        
+        
+        
+        
     </style>
 </head>
 <body>
@@ -700,7 +831,7 @@
                     </div>
                 </div>
 
-                <div class="contact-item">
+              <!--  <div class="contact-item">
                     <div class="icon-box">
                         <svg class="icon" viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"/><path d="M12.5 7H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
                     </div>
@@ -708,7 +839,7 @@
                         <h2>Opening time</h2>
                         <p>We're available 24/7 via phone or email</p>
                     </div>
-                </div>
+                </div>-->
 
                 <div class="contact-item">
                     <div class="icon-box">
