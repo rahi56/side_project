@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Residence Programs | All Countries</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Base Styles */
+        :root {
+            --primary: #1a5f7a;
+            --secondary: #57c5b6;
+            --accent: #159895;
+            --light: #f9f9f9;
+            --dark: #002b36;
+            --text: #333333;
+            --gray: #6c757d;
+            
+            /* Region Colors */
+            --europe: #4e79a7;
+            --caribbean: #f28e2b;
+            --americas: #e15759;
+            --asia: #76b7b2;
+            --oceania: #59a14f;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background-color: #f5f7fa;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        .program-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            color: white;
+            padding: 60px 0 40px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .program-header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        
+        .program-header p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+        }
+        
+        /* Country Filter */
+        .country-filter {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin: -30px auto 40px;
+            max-width: 1000px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .filter-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+        
+        .filter-btn {
+            padding: 8px 20px;
+            border-radius: 30px;
+            background: #f1f5f9;
+            color: var(--text);
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .filter-btn:hover, .filter-btn.active {
+            background: var(--primary);
+            color: white;
+        }
+        
+        /* Program Grid */
+        .programs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .program-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+        
+        .program-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        /* Color coding by region */
+        .program-card[data-category="europe"] {
+            border-top: 4px solid var(--europe);
+        }
+        
+        .program-card[data-category="caribbean"] {
+            border-top: 4px solid var(--caribbean);
+        }
+        
+        .program-card[data-category="americas"] {
+            border-top: 4px solid var(--americas);
+        }
+        
+        .program-card[data-category="asia"] {
+            border-top: 4px solid var(--asia);
+        }
+        
+        .program-card[data-category="oceania"] {
+            border-top: 4px solid var(--oceania);
+        }
+        
+        .program-card-header {
+            height: 180px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        
+        .program-card-header::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.7) 100%);
+        }
+        
+        .program-card-title {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 20px;
+            color: white;
+            z-index: 2;
+        }
+        
+        .program-card-title h2 {
+            margin: 0 0 5px;
+            font-size: 1.5rem;
+        }
+        
+        .program-card-title .flag {
+            width: 40px;
+            height: 25px;
+            background-size: cover;
+            background-position: center;
+            display: inline-block;
+            margin-right: 10px;
+            vertical-align: middle;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+        
+        .program-card-body {
+            padding: 20px;
+        }
+        
+        .program-highlights {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .highlight-item {
+            text-align: center;
+        }
+        
+        /* Color icons by region */
+        .program-card[data-category="europe"] .highlight-item i {
+            color: var(--europe);
+        }
+        
+        .program-card[data-category="caribbean"] .highlight-item i {
+            color: var(--caribbean);
+        }
+        
+        .program-card[data-category="americas"] .highlight-item i {
+            color: var(--americas);
+        }
+        
+        .program-card[data-category="asia"] .highlight-item i {
+            color: var(--asia);
+        }
+        
+        .program-card[data-category="oceania"] .highlight-item i {
+            color: var(--oceania);
+        }
+        
+        .highlight-item i {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+        
+        .highlight-item .value {
+            font-weight: 600;
+            color: var(--accent);
+        }
+        
+        .program-description {
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            color: var(--gray);
+        }
+        
+        /* Color buttons by region */
+        .program-card[data-category="europe"] .program-cta {
+            background: var(--europe);
+        }
+        
+        .program-card[data-category="caribbean"] .program-cta {
+            background: var(--caribbean);
+        }
+        
+        .program-card[data-category="americas"] .program-cta {
+            background: var(--americas);
+        }
+        
+        .program-card[data-category="asia"] .program-cta {
+            background: var(--asia);
+        }
+        
+        .program-card[data-category="oceania"] .program-cta {
+            background: var(--oceania);
+        }
+        
+        .program-cta {
+            display: block;
+            text-align: center;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .program-cta:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+        
+        /* Region labels */
+        .region-label {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: white;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            z-index: 3;
+        }
+        
+        .program-card[data-category="europe"] .region-label {
+            color: var(--europe);
+            border: 1px solid var(--europe);
+        }
+        
+        .program-card[data-category="caribbean"] .region-label {
+            color: var(--caribbean);
+            border: 1px solid var(--caribbean);
+        }
+        
+        .program-card[data-category="americas"] .region-label {
+            color: var(--americas);
+            border: 1px solid var(--americas);
+        }
+        
+        .program-card[data-category="asia"] .region-label {
+            color: var(--asia);
+            border: 1px solid var(--asia);
+        }
+        
+        .program-card[data-category="oceania"] .region-label {
+            color: var(--oceania);
+            border: 1px solid var(--oceania);
+        }
+        
+        /* CTA Section */
+        .global-cta {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+            margin-top: 50px;
+        }
+        
+        .global-cta h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        
+        .global-cta p {
+            max-width: 700px;
+            margin: 0 auto 30px;
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        .cta-btn {
+            display: inline-block;
+            background: white;
+            color: var(--primary);
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .programs-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .program-header h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="program-header">
+        <div class="container">
+            <h1>Global Residence by Investment Programs</h1>
+            <p>Compare all major residency programs worldwide in one place. Find the perfect option for your needs and budget.</p>
+        </div>
+    </header>
+    
+    <!-- Country Filter -->
+    <div class="container">
+        <div class="country-filter">
+            <div class="filter-options">
+                <button class="filter-btn active" data-filter="all">All Programs</button>
+                <button class="filter-btn" data-filter="europe">Europe</button>
+                <button class="filter-btn" data-filter="caribbean">Caribbean</button>
+                <button class="filter-btn" data-filter="americas">Americas</button>
+                <button class="filter-btn" data-filter="asia">Asia</button>
+                <button class="filter-btn" data-filter="oceania">Oceania</button>
+            </div>
+        </div>
+        
+        <!-- Programs Grid -->
+        <div class="programs-grid">
+            <!-- Portugal -->
+            <div class="program-card" data-category="europe">
+                <div class="program-card-header" style="background-image: url('https://images.unsplash.com/photo-1555881400-74c0ee5c5578')">
+                    <div class="region-label">Europe</div>
+                    <div class="program-card-title">
+                        <span class="flag" style="background-image: url('https://flagcdn.com/w40/pt.png')"></span>
+                        <h2>Portugal Golden Visa</h2>
+                    </div>
+                </div>
+                <div class="program-card-body">
+                    <div class="program-highlights">
+                        <div class="highlight-item">
+                            <i class="fas fa-euro-sign"></i>
+                            <div class="value">€500,000+</div>
+                            <div class="label">Investment</div>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-clock"></i>
+                            <div class="value">3-6 months</div>
+                            <div class="label">Processing</div>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-calendar-alt"></i>
+                            <div class="value">5 years</div>
+                            <div class="label">To Citizenship</div>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-home"></i>
+                            <div class="value">7 days/year</div>
+                            <div class="label">Stay Required</div>
+                        </div>
+                    </div>
+                    <p class="program-description">Europe's most popular residency program offering Schengen access and a pathway to EU citizenship through real estate investment or capital transfer.</p>
+                    <a href="Contact.html" class="program-cta">Get Details</a>
+                </div>
+            </div>
+            
+            <!-- Spain -->
+            <div class="program-card" data-category="europe">
+                <div class="program-card-header" style="background-image: url('https://images.unsplash.com/photo-1523531294919-4bcd7c65e216')">
+                    <div class="region-label">Europe</div>
+                    <div class="program-card-title">
+                        <span class="flag" style="background-image: url('https://flagcdn.com/w40/es.png')"></span>
+                        <h2>Spain Golden Visa</h2>
+                    </div>
+                </div>
+                <div class="program-card-body">
+                    <div class="program-highlights">
+                        <div class="highlight-item">
+                            <i class="fas fa-euro-sign"></i>
+                            <div class="value">€500,000</div>
+                            <div class="label">Investment</div>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-clock"></i>
+                            <div class="value">2-4 months</div>
+                            <div class="label">Processing</div>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-calendar-alt"></i>
+                            <div class="value">10 years</div>
+                            <div class="label">To Citizenship</div>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-home"></i>
+                            <div class="value">1 visit/year</div>
+                            <div class="label">Stay Required</div>
+                        </div>
+                    </div>
+                    <p class="program-description">Obtain Spanish residency through real estate investment with access to all Schengen countries and excellent quality of life.</p>
+                    <a href="Contact.html" class="program-cta">Get Details</a>
+                </div>
+            </div>
+            
+            <!-- Greece -->
+            <div class="program-card" data-category="europe">
+                <div class="program-card-header" style="background-image: url('https://images.unsplash.com/photo-1531525645387-7f14be1bdbbd')">
+                    <div class="region-label">Europe</div>
+                    <div class="program-card-title">
+                        <span class="flag" style="background-image: url('https://flagcdn.com/w40/gr.png')"></span>
+                        <h2>Greece Golden Visa</h2>
+                    </div>
+                </div>
+                <div class="program-card-body">
+                    <div class="program-highlights">
+                        <div class="highlight-item">
+                            <i class="fas fa-euro-sign"></i>
+                            <div class="value">€125,000</div>
+                            <div class="label">Investment</div>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-clock"></i>
+                            <div class="value">2-3 months</div>
+                            <div class="label">Processing</div>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-calendar-alt"></i>
+                            <div class="value">7 years</div>
+                            <div class="label">To Citizenship</div>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-home"></i>
+                            <div class="value">No minimum</div>
+                            <div class="label">Stay Required</div>
+                        </div>
+                    </div>
+                    <p class="program-description">Affordable European residency through real estate investment with no minimum stay requirements and Schengen access.</p>
+                    <a href="Contact.html" class="program-cta">Get Details</a>
+                </div>
+            </div>
+            
+            <!-- Malta -->
+           <!-- <div class="program-card" data-category="europe">
+                <div class="program-card-header" style="background-image: url('https://images.unsplash.com/photo-1583425423320-4582f7750c4a')">
+                    <div class="region-label">Europe</div>
+                    <div class="program-card-title">
+                        <span class="flag" style="background-image: url('https://flagcdn.com/w40/mt.png')"></span>
+                        <h2>Malta Residence</h2>
+                    </div>
+                </div>
+                <div class="program-card-body">
+                    <div class="program-highlights">
+                        <div class="highlight-item">
+                            <i class="fas fa-euro-sign"></i>
+                            <div class="value">€150,000+</div>
+                            <div class="label">Investment</div>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-clock"></i>
+                            <div class="value">4-6 months</div>
+                            <div class="label">Processing</div>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-calendar-alt"></i>
+                            <div class="value">5 years</div>
+                            <div class="label">To Citizenship</div>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-home"></i>
+                            <div class="value">No minimum</div>
+                            <div class="label">Stay Required</div>
+                        </div>
+                    </div>
+                    <p class="program-description">Malta offers residency through property rental/purchase with access to the EU and English-speaking environment.</p>
+                    <a href="Contact.html" class="program-cta">Get Details</a>
+                </div>
+            </div>-->
+            
+            <!-- USA EB-5 -->
+            <div class="program-card" data-category="americas">
+                <div class="program-card-header" style="background-image: url('https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5')">
+                    <div class="region-label">Americas</div>
+                    <div class="program-card-title">
+                        <span class="flag" style="background-image: url('https://flagcdn.com/w40/us.png')"></span>
+                        <h2>USA EB-5 Visa</h2>
+                    </div>
+                </div>
+                <div class="program-card-body">
+                    <div class="program-highlights">
+                        <div class="highlight-item">
+                            <i class="fas fa-dollar-sign"></i>
+                            <div class="value">$1,050,000+</div>
+                            <div class="label">Investment</div>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-clock"></i>
+                            <div class="value">18-24 months</div>
+                            <div class="label">Processing</div>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-calendar-alt"></i>
+                            <div class="value">5 years</div>
+                            <div class="label">To Citizenship</div>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-home"></i>
+                            <div class="value">Live in US</div>
+                            <div class="label">Stay Required</div>
+                        </div>
+                    </div>
+                    <p class="program-description">Obtain US green card through investment in a new commercial enterprise that creates jobs for US workers.</p>
+                    <a href="Contact.html" class="program-cta">Get Details</a>
+                </div>
+            </div>
+            
+            <!-- St. Kitts -->
+            <div class="program-card" data-category="caribbean">
+                <div class="program-card-header" style="background-image: url('https://images.unsplash.com/photo-1506929562872-bb421503ef21')">
+                    <div class="region-label">Caribbean</div>
+                    <div class="program-card-title">
+                        <span class="flag" style="background-image: url('https://flagcdn.com/w40/kn.png')"></span>
+                        <h2>St. Kitts Citizenship</h2>
+                    </div>
+                </div>
+                <div class="program-card-body">
+                    <div class="program-highlights">
+                        <div class="highlight-item">
+                            <i class="fas fa-dollar-sign"></i>
+                            <div class="value">$250,000+</div>
+                            <div class="label">Investment</div>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-clock"></i>
+                            <div class="value">3-6 months</div>
+                            <div class="label">Processing</div>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-calendar-alt"></i>
+                            <div class="value">Immediate</div>
+                            <div class="label">Citizenship</div>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-home"></i>
+                            <div class="value">No residency</div>
+                            <div class="label">Required</div>
+                        </div>
+                    </div>
+                    <p class="program-description">The world's first citizenship by investment program offering visa-free travel to 150+ countries including EU Schengen area.</p>
+                    <a href="Contact.html" class="program-cta">Get Details</a>
+                </div>
+            </div>
+            
+            <!-- UAE -->
+            <div class="program-card" data-category="asia">
+                <div class="program-card-header" style="background-image: url('https://images.unsplash.com/photo-1518684079-3c830dcef090')">
+                    <div class="region-label">Asia</div>
+                    <div class="program-card-title">
+                        <span class="flag" style="background-image: url('https://flagcdn.com/w40/ae.png')"></span>
+                        <h2>UAE Golden Visa</h2>
+                    </div>
+                </div>
+                <div class="program-card-body">
+                    <div class="program-highlights">
+                        <div class="highlight-item">
+                            <i class="fas fa-dollar-sign"></i>
+                            <div class="value">$545,000+</div>
+                            <div class="label">Investment</div>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-clock"></i>
+                            <div class="value">1-3 months</div>
+                            <div class="label">Processing</div>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-calendar-alt"></i>
+                            <div class="value">5/10 years</div>
+                            <div class="label">Renewable</div>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-home"></i>
+                            <div class="value">Flexible</div>
+                            <div class="label">Stay Options</div>
+                        </div>
+                    </div>
+                    <p class="program-description">Long-term residency in the UAE through real estate investment with access to world-class business infrastructure.</p>
+                    <a href="Contact.html" class="program-cta">Get Details</a>
+                </div>
+            </div>
+            
+            <!-- Australia -->
+            <div class="program-card" data-category="oceania">
+                <div class="program-card-header" style="background-image: url('https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9')">
+                    <div class="region-label">Oceania</div>
+                    <div class="program-card-title">
+                        <span class="flag" style="background-image: url('https://flagcdn.com/w40/au.png')"></span>
+                        <h2>Australia Investor Visa</h2>
+                    </div>
+                </div>
+                <div class="program-card-body">
+                    <div class="program-highlights">
+                        <div class="highlight-item">
+                            <i class="fas fa-dollar-sign"></i>
+                            <div class="value">AUD 2.5M+ (per typical 
+investor stream) </div>
+                            <div class="label">Investment</div>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-clock"></i>
+                            <div class="value">24+ months</div>
+                            <div class="label">Processing</div>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-calendar-alt"></i>
+                            <div class="value">4 years</div>
+                            <div class="label">To PR</div>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-home"></i>
+                            <div class="value">40 days/year</div>
+                            <div class="label">Stay Required</div>
+                        </div>
+                    </div>
+                    <p class="program-description">Australian residency through significant investment with pathway to permanent residence and citizenship.</p>
+                    <a href="Contact.html" class="program-cta">Get Details</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Global CTA -->
+    <section class="global-cta">
+        <div class="container">
+            <h2>Find Your Ideal Residency Program</h2>
+            <p>Our experts will help you navigate all options and find the perfect solution for your family's needs</p>
+            <a href="Contact.html" class="cta-btn">Get Free Consultation</a>
+        </div>
+    </section>
+    
+    <script>
+        // Filter functionality
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Remove active class from all buttons
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                // Add active class to clicked button
+                this.classList.add('active');
+                
+                const filter = this.dataset.filter;
+                const programs = document.querySelectorAll('.program-card');
+                
+                programs.forEach(program => {
+                    if (filter === 'all' || program.dataset.category === filter) {
+                        program.style.display = 'block';
+                    } else {
+                        program.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

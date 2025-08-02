@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium UAE Business Setup | KiteGlobal</title>
+    <meta name="description" content="Start your business in UAE free zones with KiteGlobal. Complete setup packages for Sharjah, Dubai, RAK, and Mainland with visa solutions.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #3498db;
+            --secondary: #2c3e50;
+            --accent: #e74c3c;
+            --light: #f5f7fa;
+            --dark: #2c3e50;
+            --success: #27ae60;
+            --warning: #f39c12;
+            --info: #3498db;
+            --danger: #e74c3c;
+        }
+        
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
+            color: var(--dark);
+            background-color: var(--light);
+            overflow-x: hidden;
+        }
+        
+        .container {
+            width: 95%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+        
+        /* Header Styles */
+        .setup-header {
+            background: linear-gradient(135deg, rgba(44, 62, 80, 0.9), rgba(52, 152, 219, 0.9)), 
+                        url('https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            text-align: center;
+            padding: 150px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .setup-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(ellipse at center, rgba(255,255,255,0.2) 0%, rgba(0,0,0,0.5) 100%);
+            z-index: 0;
+        }
+        
+        .setup-header .container {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .setup-header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+        
+        .setup-header p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            opacity: 0.9;
+        }
+        
+        .scroll-down {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            font-size: 2rem;
+            animation: bounce 2s infinite;
+            cursor: pointer;
+            z-index: 2;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0) translateX(-50%);}
+            40% {transform: translateY(-20px) translateX(-50%);}
+            60% {transform: translateY(-10px) translateX(-50%);}
+        }
+        
+        /* Floating Navigation */
+        .floating-nav {
+            position: fixed;
+            top: 50%;
+            right: 20px;
+            transform: translateY(-50%);
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .nav-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.5);
+            border: 2px solid var(--primary);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-dot.active {
+            background: var(--primary);
+            transform: scale(1.3);
+        }
+        
+        /* Packages Section */
+        .packages-section {
+            padding: 80px 0;
+            position: relative;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 2.5rem;
+            color: var(--dark);
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+        
+        .packages-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .package-card {
+            display: flex;
+            flex-direction: column;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            z-index: 1;
+            min-width: 0;
+            height: 100%;
+            padding-bottom: 20px;
+        }
+        
+        .package-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .package-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--primary);
+        }
+        
+        .package-card:nth-child(2)::before {
+            background: #e67e22;
+        }
+        
+        .package-card:nth-child(3)::before {
+            background: var(--success);
+        }
+        
+        .package-header {
+            padding: 25px 20px 15px;
+            background: white;
+            color: var(--dark);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .package-header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(0,0,0,0.1), transparent);
+        }
+        
+        .package-header h2 {
+            margin: 0;
+            font-size: 1.8rem;
+            font-weight: 700;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .package-subheader {
+            font-weight: 600;
+            margin: 5px 0;
+            color: var(--primary);
+            font-size: 0.9rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .package-card:nth-child(2) .package-subheader {
+            color: #e67e22;
+        }
+        
+        .package-card:nth-child(3) .package-subheader {
+            color: var(--success);
+        }
+        
+        .package-features {
+            flex-grow: 1;
+            padding: 20px;
+        }
+        
+        .package-features ul {
+            padding-left: 0;
+            list-style-type: none;
+            margin: 0;
+        }
+        
+        .package-features li {
+            font-size: 0.95rem;
+            padding-left: 25px;
+            margin-bottom: 12px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .package-features li:hover {
+            transform: translateX(5px);
+        }
+        
+        .package-features li::before {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            top: 2px;
+            color: var(--success);
+            width: 25px;
+            height: 25px;
+            background: rgba(39, 174, 96, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+        }
+        
+        .package-cta {
+            padding: 0 20px;
+            margin-top: 15px;
+        }
+        
+        .cta-btn {
+            display: block;
+            width: 100%;
+            background: var(--accent);
+            color: white;
+            padding: 12px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(231, 76, 60, 0.3);
+            text-align: center;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+        
+        .cta-btn:hover {
+            background: #c0392b;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(231, 76, 60, 0.4);
+        }
+        
+        /* Final CTA Section */
+        .final-cta {
+            text-align: center;
+            padding: 100px 20px;
+            position: relative;
+            overflow: hidden;
+            background-color: #f8f9fa;
+        }
+        
+        .final-cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+        
+        .final-cta p {
+            max-width: 700px;
+            margin: 0 auto 40px;
+            font-size: 1.2rem;
+            color: #7f8c8d;
+        }
+        
+        .disclaimer {
+            margin-top: 40px;
+            font-size: 0.9rem;
+            color: #95a5a6;
+        }
+        
+        .terms-notice {
+            margin-top: 15px;
+            text-align: center;
+            padding: 0 20px;
+            font-size: 0.85rem;
+            color: #95a5a6;
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 1200px) {
+            .packages-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .setup-header h1 {
+                font-size: 2.8rem;
+            }
+            
+            .floating-nav {
+                display: none;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .setup-header {
+                padding: 100px 20px;
+                background-attachment: scroll;
+            }
+            
+            .setup-header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .setup-header p {
+                font-size: 1.1rem;
+            }
+            
+            .packages-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+                margin-bottom: 30px;
+            }
+            
+            .package-card {
+                max-width: 400px;
+                margin: 0 auto;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .setup-header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .package-header {
+                padding: 20px;
+            }
+            
+            .final-cta h2 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating Navigation -->
+    <div class="floating-nav">
+        <div class="nav-dot active" data-section="header"></div>
+        <div class="nav-dot" data-section="packages"></div>
+        <div class="nav-dot" data-section="contact"></div>
+    </div>
+    
+    <!-- Business Setup Header -->
+    <header class="setup-header" id="header">
+        <div class="container">
+            <h1 class="animate__animated animate__fadeInDown">UAE Free Zone Business Setup</h1>
+            <p class="animate__animated animate__fadeIn animate__delay-1s">Start your business in UAE with our complete setup packages including licenses, visas, and banking support.</p>
+            <a href="#packages" class="cta-btn animate__animated animate__fadeInUp animate__delay-1s">Explore Packages</a>
+        </div>
+        <div class="scroll-down" id="scrollDown">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </header>
+    
+    <!-- Packages Section -->
+    <section class="packages-section" id="packages">
+        <div class="container">
+            <h2 class="section-title animate__animated">Business Setup Packages</h2>
+            
+            <div class="packages-grid">
+                <!-- Sharjah Package -->
+                <div class="package-card animate__animated">
+                    <div class="package-header">
+                        <h2>SHARJAH FREEZONE</h2>
+                        <div class="package-subheader">(ZERO VISA)</div>
+                        <div class="package-subheader">BEST FOR E-COMMERCE</div>
+                    </div>
+                    <div class="package-features">
+                        <ul>
+                            <li>100% Foreign Ownership</li>
+                            <li>Free Business Consultation</li>
+                            <li>Free Bank Account Consultation</li>
+                            <li>Upto 5 Business Activities</li>
+                            <li>Upto 5 Shareholders</li>
+                            <li>Business License</li>
+                            <li>Memorandum of Association</li>
+                            <li>Lease Agreement</li>
+                            <li>Dedicated Account Manager</li>
+                        </ul>
+                    </div>
+                    <div class="package-cta">
+                        <a href="Contact.html" class="cta-btn">GET OFFER NOW</a>
+                    </div>
+                    <div class="terms-notice">
+                        <a href="/terms" style="color: #95a5a6; text-decoration: none;">*Terms & Conditions Apply</a>
+                    </div>
+                </div>
+                
+                <!-- Dubai Freezone Package -->
+                <div class="package-card animate__animated">
+                    <div class="package-header">
+                        <h2>DUBAI FREEZONE</h2>
+                        <div class="package-subheader">(ZERO VISA)</div>
+                    </div>
+                    <div class="package-features">
+                        <ul>
+                            <li>100% Foreign Ownership</li>
+                            <li>Free Business Consultation</li>
+                            <li>Free Bank Account Consultation</li>
+                            <li>3 Free sessions of Tax & VAT consultation</li>
+                            <li>Upto 3 Business Activities</li>
+                            <li>Business License</li>
+                            <li>Memorandum of Association</li>
+                            <li>100% profit repatriation</li>
+                            <li>Lease Agreement</li>
+                            <li>Dedicated Account Manager</li>
+                        </ul>
+                    </div>
+                    <div class="package-cta">
+                        <a href="Contact.html" class="cta-btn">GET OFFER NOW</a>
+                    </div>
+                    <div class="terms-notice">
+                        <a href="/terms" style="color: #95a5a6; text-decoration: none;">*Terms & Conditions Apply</a>
+                    </div>
+                </div>
+                
+                <!-- Dubai Mainland Package -->
+                <div class="package-card animate__animated">
+                    <div class="package-header">
+                        <h2>DUBAI MAINLAND</h2>
+                        <div class="package-subheader">(ONE VISA)</div>
+                    </div>
+                    <div class="package-features">
+                        <ul>
+                            <li>100% Foreign Ownership</li>
+                            <li>Free Business Consultation</li>
+                            <li>Free Bank Account Consultation</li>
+                            <li>3 Free sessions of Tax & VAT consultation</li>
+                            <li>1 Investor Visa</li>
+                            <li>Commercial/ Service License</li>
+                            <li>Memorandum of Association</li>
+                            <li>Upto 3 Employees Visa Quota</li>
+                            <li>Virtual Officer (Ejari)</li>
+                            <li>Dedicated Account Manager</li>
+                        </ul>
+                    </div>
+                    <div class="package-cta">
+                        <a href="Contact.html" class="cta-btn">GET OFFER NOW</a>
+                    </div>
+                    <div class="terms-notice">
+                        <a href="/terms" style="color: #95a5a6; text-decoration: none;">*Terms & Conditions Apply</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Final CTA Section -->
+    <section class="final-cta" id="contact">
+        <div class="container">
+            <h2 class="animate__animated">Ready to Start Your Business in UAE?</h2>
+            <p class="animate__animated">Contact our business setup specialists today to discuss your requirements and get started.</p>
+            <a href="Contact.html" class="cta-btn animate__animated" style="padding: 15px 40px; font-size: 1.1rem; display: inline-block; width: auto;">Contact Us Now</a>
+        </div>
+    </section>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <script>
+        // Initialize GSAP animations
+        gsap.registerPlugin(ScrollTrigger);
+        
+        // Animate package cards on scroll
+        gsap.utils.toArray('.package-card').forEach((card, i) => {
+            gsap.from(card, {
+                scrollTrigger: {
+                    trigger: card,
+                    start: "top 80%",
+                    toggleActions: "play none none none"
+                },
+                y: 50,
+                opacity: 0,
+                duration: 0.8,
+                delay: i * 0.1
+            });
+        });
+        
+        // Animate final CTA elements
+        gsap.utils.toArray('.final-cta h2, .final-cta p, .final-cta a').forEach((el, i) => {
+            gsap.from(el, {
+                scrollTrigger: {
+                    trigger: '.final-cta',
+                    start: "top 70%",
+                    toggleActions: "play none none none"
+                },
+                y: 30,
+                opacity: 0,
+                duration: 0.8,
+                delay: i * 0.1
+            });
+        });
+        
+        // Floating navigation
+        const sections = document.querySelectorAll('section, header');
+        const navDots = document.querySelectorAll('.nav-dot');
+        
+        window.addEventListener('scroll', () => {
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                
+                if (pageYOffset >= (sectionTop - sectionHeight / 3)) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navDots.forEach(dot => {
+                dot.classList.remove('active');
+                if (dot.getAttribute('data-section') === current) {
+                    dot.classList.add('active');
+                }
+            });
+        });
+        
+        navDots.forEach(dot => {
+            dot.addEventListener('click', () => {
+                const sectionId = dot.getAttribute('data-section');
+                const section = document.getElementById(sectionId);
+                window.scrollTo({
+                    top: section.offsetTop,
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Scroll down button
+        document.getElementById('scrollDown').addEventListener('click', () => {
+            window.scrollTo({
+                top: document.getElementById('packages').offsetTop,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Animate elements on load
+        document.addEventListener('DOMContentLoaded', () => {
+            gsap.from('.setup-header h1', { opacity: 0, y: -50, duration: 1 });
+            gsap.from('.setup-header p', { opacity: 0, y: 20, duration: 1, delay: 0.3 });
+            gsap.from('.setup-header .cta-btn', { opacity: 0, y: 20, duration: 1, delay: 0.6 });
+            gsap.from('.scroll-down', { opacity: 0, duration: 1, delay: 1.5 });
+        });
+    </script>
+</body>
+</html>

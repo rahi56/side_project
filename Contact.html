@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact | KiteGlobalKG</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    .main-content {
+      display: flex;
+      flex: 1;
+      overflow: hidden;
+    }
+
+    .left {
+      flex: 1;
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+        url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .left h1 {
+      font-size: 3rem;
+      line-height: 1.2;
+    }
+
+    .right {
+      flex: 1;
+      background: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    .card {
+      background: #ffffff;
+      padding: 3rem;
+      border-radius: 16px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+      max-width: 400px;
+      width: 100%;
+      animation: fadeInUp 1s ease forwards;
+      position: relative;
+    }
+
+    .card::before {
+      content: "KiteGlobal";
+      position: absolute;
+      top: -25px;
+      left: 0;
+      font-size: 0.9rem;
+      color: #ccc;
+      letter-spacing: 2px;
+      font-weight: bold;
+    }
+
+    @keyframes fadeInUp {
+      0% {
+        transform: translateY(30px);
+        opacity: 0;
+      }
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .card h2 {
+      margin-bottom: 1.5rem;
+      font-size: 1.8rem;
+      color: #5c27fe;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1.2rem;
+      font-size: 1rem;
+    }
+
+    .contact-item i {
+      color: #5c27fe;
+      margin-right: 12px;
+      font-size: 1.2rem;
+    }
+
+    .contact-item a {
+      color: #333;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .contact-item a:hover {
+      color: #5c27fe;
+    }
+
+    .social {
+      margin-top: 2rem;
+    }
+
+    .social a {
+      margin-right: 15px;
+      color: #5c27fe;
+      font-size: 1.2rem;
+      transition: 0.3s ease;
+    }
+
+    .social a:hover {
+      color: #000;
+    }
+
+    footer {
+      background: #f1f1f1;
+      padding: 1rem 2rem;
+      text-align: center;
+      font-size: 0.95rem;
+      color: #777;
+      border-top: 1px solid #ddd;
+    }
+
+    footer span {
+      color: #5c27fe;
+      font-weight: 600;
+    }
+
+    @media(max-width: 768px) {
+      .main-content {
+        flex-direction: column;
+      }
+
+      .left, .right {
+        flex: none;
+        height: auto;
+        width: 100%;
+      }
+
+      .left h1 {
+        font-size: 2rem;
+      }
+
+      .card {
+        padding: 2rem;
+        box-shadow: none;
+      }
+
+      footer {
+        font-size: 0.85rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="main-content">
+    <div class="left">
+      <h1>Contact<br>KiteGlobalKG</h1>
+    </div>
+
+    <div class="right">
+      <div class="card">
+        <h2>Let’s Connect</h2>
+
+        <div class="contact-item">
+          <i class="fas fa-envelope"></i>
+          <a href="mailto: info@kiteglobalkg.com"> info@kiteglobalkg.com</a>
+        </div>
+
+        <div class="contact-item">
+          <i class="fas fa-phone-alt"></i>
+          <a href="tel:+971565637290">+971565637290</a>
+        </div>
+
+       
+
+        <div class="contact-item">
+          <i class="fas fa-map-marker-alt"></i>
+          United Arab Emirates.
+        </div>
+           <div class="contact-item">
+          <i class="fas fa-map-marker-alt"></i>
+          United Kingdom.
+        </div>
+
+           <div class="contact-item">
+          <i class="fas fa-map-marker-alt"></i>
+          Singapore.
+        </div>
+
+
+        <div class="social">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 <span>KiteGlobalKG</span>. All Rights Reserved. | Designed by <span>KiteGlobal</span> Team
+  </footer>
+
+</body>
+</html>

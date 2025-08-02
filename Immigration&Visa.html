@@ -1,0 +1,1436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Immigration & Visa Services | KiteGlobal</title>
+    <meta name="description" content="KiteGlobal provides expert immigration and visa services including visa applications, residency permits, citizenship programs, and relocation assistance worldwide.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Global Styles */
+        :root {
+            --primary: #0066cc;
+            --secondary: #ffcc00;
+            --dark: #003366;
+            --light: #f8f9fa;
+            --accent: #ff6b6b;
+            --text: #333333;
+            --text-light: #666666;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            line-height: 1.7;
+            color: var(--text);
+            background-color: #ffffff;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--dark);
+            color: white;
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        header.scrolled {
+            padding: 10px 0;
+            background-color: rgba(0, 51, 102, 0.95);
+            backdrop-filter: blur(5px);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo i {
+            color: var(--secondary);
+            margin-right: 10px;
+            font-size: 32px;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 25px;
+            position: relative;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            padding: 5px 0;
+        }
+        
+        nav ul li a:hover {
+            color: var(--secondary);
+        }
+        
+        /* Dropdown Menu */
+        .dropdown {
+            position: relative;
+        }
+        
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: white;
+            min-width: 220px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            border-radius: 5px;
+            z-index: 1;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+        }
+        
+        .dropdown:hover .dropdown-content {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .dropdown-content a {
+            color: var(--text);
+            padding: 12px 16px;
+            display: block;
+            transition: all 0.3s;
+            border-bottom: 1px solid #f1f1f1;
+        }
+        
+        .dropdown-content a:hover {
+            background-color: var(--light);
+            color: var(--primary);
+            padding-left: 20px;
+        }
+        
+        .dropdown-content a:last-child {
+            border-bottom: none;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            z-index: 1001;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(0, 51, 102, 0.8), rgba(0, 102, 204, 0.8)), url('https://images.unsplash.com/photo-1506929562872-bb421503ef21?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            height: 100vh;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            padding: 0 20px;
+            transform: translateY(20px);
+            opacity: 0;
+            animation: fadeInUp 1s ease forwards 0.3s;
+        }
+        
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        }
+        
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: var(--dark);
+            padding: 15px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            color: var(--dark);
+        }
+        
+        .btn:active {
+            transform: translateY(1px);
+        }
+        
+        .btn:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transform: translateX(-100%);
+            transition: transform 0.6s ease;
+        }
+        
+        .btn:hover:after {
+            transform: translateX(100%);
+        }
+        
+        .scroll-down {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            font-size: 24px;
+            animation: bounce 2s infinite;
+            cursor: pointer;
+        }
+        
+        /* Section Styles */
+        .section-title {
+            text-align: center;
+            margin: 60px 0 40px;
+            font-size: 2.2rem;
+            color: var(--dark);
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 3px;
+            background: var(--secondary);
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 50px;
+            font-size: 1.1rem;
+            color: var(--text-light);
+        }
+        
+        /* Immigration Services Grid - Enhanced Design */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 50px 0;
+        }
+        
+        .service-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s ease;
+            border: 1px solid #e0e0e0;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            position: relative;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+            border-color: var(--primary);
+        }
+        
+        .service-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+        }
+        
+        .service-icon {
+            font-size: 3.5rem;
+            color: var(--primary);
+            text-align: center;
+            margin: 30px 0 20px;
+            transition: transform 0.3s;
+        }
+        
+        .service-card:hover .service-icon {
+            transform: scale(1.1);
+        }
+        
+        .service-content {
+            padding: 0 25px 25px;
+            text-align: center;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .service-content h3 {
+            margin-top: 0;
+            color: var(--dark);
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+        
+        .service-content p {
+            margin-bottom: 20px;
+            color: var(--text-light);
+        }
+        
+        .service-content ul {
+            text-align: left;
+            padding-left: 20px;
+            margin: 15px 0;
+            flex-grow: 1;
+        }
+        
+        .service-content ul li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 20px;
+            color: var(--text-light);
+        }
+        
+        .service-content ul li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+        }
+        
+        .learn-more {
+            color: var(--primary);
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 15px;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+        
+        .learn-more i {
+            margin-left: 8px;
+            transition: transform 0.3s;
+        }
+        
+        .learn-more:hover {
+            background-color: rgba(0, 102, 204, 0.1);
+            color: var(--accent);
+        }
+        
+        .learn-more:hover i {
+            transform: translateX(5px);
+        }
+        
+        /* Visa Services Section */
+        .visa-services {
+            padding: 100px 0;
+            background-color: var(--light);
+        }
+        
+        .visa-services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .visa-service-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
+        
+        .visa-service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .visa-service-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+        }
+        
+        .visa-service-img {
+            height: 220px;
+            overflow: hidden;
+        }
+        
+        .visa-service-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+        }
+        
+        .visa-service-card:hover .visa-service-img img {
+            transform: scale(1.1);
+        }
+        
+        .visa-service-content {
+            padding: 25px;
+            position: relative;
+        }
+        
+        .visa-service-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+        
+        .visa-service-content p {
+            color: var(--text-light);
+            margin-bottom: 20px;
+        }
+        
+        .service-badge {
+            position: absolute;
+            top: -15px;
+            right: 20px;
+            background: var(--accent);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);
+        }
+        
+        /* Process Section */
+        .process-container {
+            background: #f9f9f9;
+            padding: 70px 0;
+            position: relative;
+        }
+        
+        .process-steps {
+            counter-reset: step-counter;
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .process-steps:before {
+            content: '';
+            position: absolute;
+            left: 40px;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: var(--primary);
+        }
+        
+        .process-step {
+            position: relative;
+            padding-left: 100px;
+            margin-bottom: 40px;
+        }
+        
+        .process-step:before {
+            counter-increment: step-counter;
+            content: counter(step-counter);
+            position: absolute;
+            left: 20px;
+            top: 0;
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            z-index: 1;
+        }
+        
+        .process-step h3 {
+            margin-top: 0;
+            color: var(--dark);
+        }
+        
+        /* Countries Section */
+        .countries-section {
+            padding: 70px 0;
+        }
+        
+        .country-tabs {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 40px;
+        }
+        
+        .country-tab {
+            padding: 10px 20px;
+            background: #eee;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+        
+        .country-tab.active, .country-tab:hover {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .country-content {
+            display: none;
+        }
+        
+        .country-content.active {
+            display: block;
+        }
+        
+        .visa-types {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .visa-type {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+        }
+        
+        .visa-type:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .visa-type h4 {
+            margin-top: 0;
+            color: var(--primary);
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .visa-type ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .visa-type ul li {
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 20px;
+        }
+        
+        .visa-type ul li:before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+        }
+        
+        /* Testimonials Section */
+        .testimonials {
+            background: var(--dark);
+            color: white;
+            padding: 70px 0;
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .testimonial {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 25px;
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+        
+        .testimonial:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-5px);
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            position: relative;
+            padding-left: 20px;
+        }
+        
+        .testimonial-text:before {
+            content: '"';
+            position: absolute;
+            left: 0;
+            top: -5px;
+            font-size: 2rem;
+            color: rgba(255, 255, 255, 0.3);
+        }
+        
+        .testimonial-author {
+            font-weight: bold;
+            color: var(--secondary);
+        }
+        
+        /* FAQ Section */
+        .faq-section {
+            padding: 70px 0;
+        }
+        
+        .faq-item {
+            margin-bottom: 20px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+            transition: all 0.3s;
+        }
+        
+        .faq-question {
+            font-weight: bold;
+            color: var(--dark);
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+        }
+        
+        .faq-question:after {
+            content: '+';
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+        
+        .faq-question.active:after {
+            content: '-';
+        }
+        
+        .faq-answer {
+            color: var(--text-light);
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .faq-answer.show {
+            max-height: 300px;
+        }
+        
+        /* CTA Section */
+        .immigration-cta {
+            text-align: center;
+            padding: 80px 20px;
+            background: linear-gradient(135deg, var(--dark), var(--primary));
+            color: white;
+        }
+        
+        .immigration-cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .immigration-cta p {
+            max-width: 700px;
+            margin: 0 auto 30px;
+            font-size: 1.1rem;
+        }
+        
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            z-index: 999;
+        }
+        
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            background: var(--accent);
+            transform: translateY(-3px);
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0) translateX(-50%);
+            }
+            40% {
+                transform: translateY(-20px) translateX(-50%);
+            }
+            60% {
+                transform: translateY(-10px) translateX(-50%);
+            }
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 992px) {
+            .hero-content h1 {
+                font-size: 2.8rem;
+            }
+            
+            .process-steps {
+                flex-direction: column;
+            }
+            
+            .process-steps:before {
+                display: none;
+            }
+            
+            .process-step {
+                flex-direction: column;
+                text-align: center;
+                padding-left: 0;
+                margin-bottom: 30px;
+            }
+            
+            .process-step:before {
+                position: relative;
+                left: 0;
+                margin: 0 auto 15px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: row;
+                text-align: left;
+            }
+            
+            .logo {
+                margin-bottom: 0;
+            }
+            
+            nav {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 80%;
+                max-width: 350px;
+                height: 100vh;
+                background: var(--dark);
+                padding: 80px 30px 30px;
+                transition: right 0.3s ease;
+                overflow-y: auto;
+            }
+            
+            nav.active {
+                right: 0;
+            }
+            
+            nav ul {
+                flex-direction: column;
+            }
+            
+            nav ul li {
+                margin: 0 0 15px 0;
+            }
+            
+            .dropdown-content {
+                position: static;
+                display: none;
+                background: rgba(255, 255, 255, 0.1);
+                box-shadow: none;
+                margin-top: 10px;
+                opacity: 1;
+                transform: none;
+            }
+            
+            .dropdown:hover .dropdown-content {
+                display: none;
+            }
+            
+            .dropdown.active .dropdown-content {
+                display: block;
+            }
+            
+            .dropdown-content a {
+                color: white;
+                border-bottom-color: rgba(255, 255, 255, 0.1);
+            }
+            
+            .dropdown-content a:hover {
+                background: rgba(255, 255, 255, 0.1);
+                color: var(--secondary);
+            }
+            
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero-content p {
+                font-size: 1rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .mobile-menu-btn {
+                display: block;
+                position: fixed;
+                top: 20px;
+                right: 20px;
+            }
+            
+            .hero {
+                min-height: 500px;
+            }
+            
+            .hero-content h1 {
+                font-size: 1.8rem;
+            }
+            
+            .visa-services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .country-tabs {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container header-container">
+            <div class="logo">
+                <i class="fas fa-paper-plane"></i>
+                <span>Kite</span><span>Global</span>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+    
+                    <li class="dropdown">
+                        <a href="#">Our Services <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="citizenship.html">Citizenship</a>
+                            <a href="residentship.html">Residency</a>
+                            <a href="Immigration&Visa.html">Immigration & Visa</a>
+                            <a href="settingupBusiness.html">Setting UP Business</a>
+                            <a href="Government%20&%20Legal%20Process%20Assistance.html">Government & Legal Process Assistance </a>
+                        </div>
+                    </li>
+                    <li><a href="Contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Global Immigration & Visa Solutions</h1>
+            <p>KiteGlobal provides expert immigration services to help individuals, families, and businesses navigate complex visa and residency requirements worldwide.</p>
+            <a href="#consultation" class="btn">Free Initial Consultation</a>
+        </div>
+        <div class="scroll-down" id="scrollDown">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+    
+    <!-- Immigration Services Section -->
+    <section class="container" id="services">
+        <h2 class="section-title">Our Immigration Services</h2>
+        <p class="section-subtitle">Comprehensive solutions tailored to your specific immigration needs and goals.</p>
+        
+        <div class="services-grid">
+            <!-- Service 1 -->
+            <div class="service-card">
+                <div class="service-icon">✈️</div>
+                <div class="service-content">
+                    <h3>Visa Applications</h3>
+                    <p>Expert assistance with tourist, business, student, and work visas for countries worldwide.</p>
+                    <ul>
+                        <li>Short-term and long-term visas</li>
+                        <li>Document preparation</li>
+                        <li>Application submission</li>
+                        <li>Interview preparation</li>
+                    </ul>
+                    <a href="Contact.html" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            
+            <!-- Service 2 -->
+            <div class="service-card">
+                <div class="service-icon">🏠</div>
+                <div class="service-content">
+                    <h3>Residency Permits</h3>
+                    <p>Guidance through the complex process of obtaining temporary and permanent residency.</p>
+                    <ul>
+                        <li>Work residency programs</li>
+                        <li>Family reunification</li>
+                        <li>Retirement visas</li>
+                        <li>Investment residency</li>
+                    </ul>
+                    <a href="Contact.html" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            
+            <!-- Service 3 -->
+            <div class="service-card">
+                <div class="service-icon">🌎</div>
+                <div class="service-content">
+                    <h3>Citizenship Programs</h3>
+                    <p>Assistance with citizenship by investment and naturalization processes.</p>
+                    <ul>
+                        <li>Golden Visa programs</li>
+                        <li>Citizenship by investment</li>
+                        <li>Naturalization assistance</li>
+                        <li>Dual citizenship advice</li>
+                    </ul>
+                    <a href="#" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            
+            <!-- Service 4 -->
+            <div class="service-card">
+                <div class="service-icon">👨‍👩‍👧‍👦</div>
+                <div class="service-content">
+                    <h3>Family Immigration</h3>
+                    <p>Comprehensive support for family-based immigration and reunification.</p>
+                    <ul>
+                        <li>Spouse visas</li>
+                        <li>Parent sponsorship</li>
+                        <li>Child adoption immigration</li>
+                        <li>Fiancé(e) visas</li>
+                    </ul>
+                    <a href="#" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            
+            <!-- Service 5 -->
+            <div class="service-card">
+                <div class="service-icon">🏢</div>
+                <div class="service-content">
+                    <h3>Corporate Immigration</h3>
+                    <p>Solutions for businesses needing to relocate employees internationally.</p>
+                    <ul>
+                        <li>Work permits</li>
+                        <li>Intra-company transfers</li>
+                        <li>Compliance management</li>
+                        <li>Global mobility programs</li>
+                    </ul>
+                    <a href="Contact.html" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            
+            <!-- Service 6 -->
+            <div class="service-card">
+                <div class="service-icon">🛂</div>
+                <div class="service-content">
+                    <h3>Compliance & Appeals</h3>
+                    <p>Help with immigration compliance issues and appeals processes.</p>
+                    <ul>
+                        <li>Visa refusal appeals</li>
+                        <li>Compliance audits</li>
+                        <li>Status regularization</li>
+                        <li>Deportation defense</li>
+                    </ul>
+                    <a href="Contact.html" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Visa Services Section -->
+    <section class="visa-services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Premium Visa Services</h2>
+                <p>We specialize in all types of visa applications with a success rate of over 98%. Choose the service that matches your travel needs.</p>
+            </div>
+            
+            <div class="visa-services-grid">
+                <div class="visa-service-card">
+                    <div class="visa-service-img">
+                        <img src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Tourist Visa">
+                    </div>
+                    <div class="visa-service-content">
+                        <span class="service-badge">Popular</span>
+                        <h3>Tourist Visa</h3>
+                        <p>Experience seamless processing for your vacation visas with our expert guidance and document verification.</p>
+                        <a href="Contact.html" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="visa-service-card">
+                    <div class="visa-service-img">
+                        <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Business Visa">
+                    </div>
+                    <div class="visa-service-content">
+                        <h3>Business Visa</h3>
+                        <p>Fast-track processing for your professional trips with priority appointments and corporate documentation.</p>
+                        <a href="Contact.html" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="visa-service-card">
+                    <div class="visa-service-img">
+                        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Work Visa">
+                    </div>
+                    <div class="visa-service-content">
+                        <span class="service-badge">Hot</span>
+                        <h3>Work Visa</h3>
+                        <p>End-to-end processing of employment visas with contract review and employer verification.</p>
+                        <a href="Contact.html" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Our Process Section -->
+    <section class="process-container">
+        <div class="container">
+            <h2 class="section-title">Our Immigration Process</h2>
+            <p class="section-subtitle">A clear, step-by-step approach to ensure your immigration success.</p>
+            
+            <div class="process-steps">
+                <div class="process-step">
+                    <h3>Initial Consultation</h3>
+                    <p>We assess your situation, goals, and eligibility during a comprehensive consultation.</p>
+                </div>
+                
+                <div class="process-step">
+                    <h3>Strategy Development</h3>
+                    <p>Our experts create a customized immigration plan tailored to your specific circumstances.</p>
+                </div>
+                
+                <div class="process-step">
+                    <h3>Document Preparation</h3>
+                    <p>We guide you through gathering and preparing all required documentation.</p>
+                </div>
+                
+                <div class="process-step">
+                    <h3>Application Submission</h3>
+                    <p>Our team prepares and submits your application with meticulous attention to detail.</p>
+                </div>
+                
+                <div class="process-step">
+                    <h3>Follow-up & Coordination</h3>
+                    <p>We liaise with authorities and keep you informed throughout the process.</p>
+                </div>
+                
+                <div class="process-step">
+                    <h3>Finalization & Relocation</h3>
+                    <p>We assist with final steps and can provide relocation services if needed.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Countries Section -->
+    <section class="countries-section container">
+        <h2 class="section-title">Popular Immigration Destinations</h2>
+        <p class="section-subtitle">We handle immigration processes for countries across all continents.</p>
+        
+        <div class="country-tabs">
+            <div class="country-tab active" data-country="americas">Americas</div>
+            <div class="country-tab" data-country="europe">Europe</div>
+            <div class="country-tab" data-country="asia">Asia</div>
+            <div class="country-tab" data-country="middleeast">Middle East</div>
+            <div class="country-tab" data-country="oceania">Oceania</div>
+        </div>
+        
+        <div class="country-content active" id="americas">
+            <h3 style="text-align: center; margin-bottom: 30px;">Americas Immigration Services</h3>
+            <div class="visa-types">
+                <div class="visa-type">
+                    <h4>United States</h4>
+                    <ul>
+                        <li>B1/B2 Visitor Visas</li>
+                        <li>H1B Work Visas</li>
+                        <li>L1 Intracompany Transfers</li>
+                        <li>EB-5 Investor Program</li>
+                        <li>Family-based Green Cards</li>
+                    </ul>
+                </div>
+                
+                <div class="visa-type">
+                    <h4>Canada</h4>
+                    <ul>
+                        <li>Express Entry</li>
+                        <li>Provincial Nominee Programs</li>
+                        <li>Startup Visa</li>
+                        <li>Study Permits</li>
+                        <li>Family Sponsorship</li>
+                    </ul>
+                </div>
+                
+                <div class="visa-type">
+                    <h4>Caribbean Programs</h4>
+                    <ul>
+                        <li>Antigua & Barbuda Citizenship</li>
+                        <li>St. Kitts & Nevis Citizenship</li>
+                        <li>Grenada Citizenship</li>
+                        <li>Dominica Citizenship</li>
+                        <li>Barbados Residency</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="country-content" id="europe">
+            <h3 style="text-align: center; margin-bottom: 30px;">European Immigration Services</h3>
+            <div class="visa-types">
+                <div class="visa-type">
+                    <h4>United Kingdom</h4>
+                    <ul>
+                        <li>Skilled Worker Visa</li>
+                        <li>Global Talent Visa</li>
+                        <li>Investor Visa</li>
+                        <li>Ancestry Visa</li>
+                        <li>Family Visas</li>
+                    </ul>
+                </div>
+                
+                <div class="visa-type">
+                    <h4>European Union</h4>
+                    <ul>
+                        <li>EU Blue Card</li>
+                        <li>Golden Visas (Portugal, Spain, Greece)</li>
+                        <li>Digital Nomad Visas</li>
+                        <li>Retirement Visas</li>
+                        <li>Family Reunification</li>
+                    </ul>
+                </div>
+                
+                <div class="visa-type">
+                    <h4>Other European Programs</h4>
+                    <ul>
+                        <li>Switzerland Work Permits</li>
+                        <li>Norway Residency</li>
+                        <li>Montenegro Citizenship</li>
+                        <li>Turkey Citizenship</li>
+                        <li>Georgia Residency</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">Client Success Stories</h2>
+            
+            <div class="testimonial-grid">
+                <div class="testimonial">
+                    <p class="testimonial-text">"KiteGlobal made our family relocation to Canada seamless. Their expertise with the Express Entry system saved us months of frustration."</p>
+                    <p class="testimonial-author">- The Patel Family</p>
+                </div>
+                
+                <div class="testimonial">
+                    <p class="testimonial-text">"As a business owner, I don't have time to deal with visa paperwork. KiteGlobal handles all our corporate travel visas efficiently. Their express service saved us last minute!"</p>
+                    <p class="testimonial-author">- Michael Chen, Business Owner</p>
+                </div>
+                
+                <div class="testimonial">
+                    <p class="testimonial-text">"After two previous rejections, I was losing hope. KiteGlobal analyzed my case, fixed the issues, and got my family visa approved. They're truly experts in complex cases."</p>
+                    <p class="testimonial-author">- Amina Patel</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-title">Immigration FAQs</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">How long does the immigration process typically take?</div>
+                <div class="faq-answer">Processing times vary significantly depending on the country, visa type, and individual circumstances. Simple tourist visas may take weeks, while residency applications can take several months to years. During our consultation, we provide realistic timelines for your specific case.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">What documents will I need to provide?</div>
+                <div class="faq-answer">Requirements vary by visa type and destination country but typically include passport, photographs, financial documents, health certificates, and sometimes police clearance. We provide a customized checklist after assessing your case.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Can you help if my visa application was previously refused?</div>
+                <div class="faq-answer">Yes, we specialize in overcoming visa refusals. We analyze refusal reasons, address deficiencies, and strengthen your new application. Many clients come to us after unsuccessful attempts elsewhere.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Do you work with investment immigration programs?</div>
+                <div class="faq-answer">Absolutely. We're experienced with Golden Visas, citizenship by investment, and entrepreneur immigration programs worldwide. We help select the right program for your budget and goals while ensuring full compliance.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">How are your fees structured?</div>
+                <div class="faq-answer">We offer transparent pricing with options for fixed-fee packages (for straightforward cases) or hourly rates (for complex matters). Government fees are always separate. After our consultation, we provide a detailed fee estimate with no obligations.</div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA Section -->
+    <section class="immigration-cta" id="consultation">
+        <div class="container">
+            <h2>Start Your Immigration Journey Today</h2>
+            <p>Book a free initial consultation with our immigration experts to discuss your options and develop a personalized strategy.</p>
+            <a href="Contact.html" class="btn">Schedule Consultation</a>
+        </div>
+    </section>
+    
+    <!-- Back to Top Button -->
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+    
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mainNav = document.getElementById('mainNav');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mainNav.classList.toggle('active');
+            mobileMenuBtn.innerHTML = mainNav.classList.contains('active') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Dropdown Menu for Mobile
+        document.querySelectorAll('.dropdown > a').forEach(dropdownLink => {
+            dropdownLink.addEventListener('click', function(e) {
+                if (window.innerWidth <= 768) {
+                    e.preventDefault();
+                    const dropdown = this.parentElement;
+                    dropdown.classList.toggle('active');
+                }
+            });
+        });
+        
+        // Header Scroll Effect
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        
+        // Scroll Down Button
+        const scrollDown = document.getElementById('scrollDown');
+        scrollDown.addEventListener('click', () => {
+            window.scrollTo({
+                top: document.getElementById('services').offsetTop - 80,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Country Tabs
+        document.querySelectorAll('.country-tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Remove active class from all tabs and content
+                document.querySelectorAll('.country-tab').forEach(t => t.classList.remove('active'));
+                document.querySelectorAll('.country-content').forEach(c => c.classList.remove('active'));
+                
+                // Add active class to clicked tab and corresponding content
+                tab.classList.add('active');
+                const countryId = tab.getAttribute('data-country');
+                document.getElementById(countryId).classList.add('active');
+            });
+        });
+        
+        // FAQ Toggle
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                question.classList.toggle('active');
+                const answer = question.nextElementSibling;
+                answer.classList.toggle('show');
+            });
+        });
+        
+        // Back to Top Button
+        const backToTop = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTop.classList.add('show');
+            } else {
+                backToTop.classList.remove('show');
+            }
+        });
+        
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (mainNav.classList.contains('active')) {
+                        mainNav.classList.remove('active');
+                        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                    }
+                }
+            });
+        });
+        
+        // Animation on scroll
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.service-card, .process-step, .faq-item');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.2;
+                
+                if (elementPosition < screenPosition) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        }
+        
+        // Set initial state for animated elements
+        document.querySelectorAll('.service-card, .process-step, .faq-item').forEach(element => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(20px)';
+            element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        });
+        
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
+    </script>
+</body>
+</html>

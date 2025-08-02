@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Government & Legal Process Assistance | KiteGlobal</title>
+    <meta name="description" content="KiteGlobal helps navigate official government procedures and legal documentation processes. We assist with document preparation, notarization, attestation, and coordination with authorities.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --accent-color: #e11d48;
+            --dark-color: #1f2937;
+            --light-color: #f9fafb;
+            --text-color: #374151;
+            --text-light: #6b7280;
+            --border-radius: 8px;
+            --box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --transition: all 0.3s ease;
+        }
+        
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--light-color);
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            color: var(--dark-color);
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+        
+        section {
+            padding: 80px 0;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: var(--border-radius);
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        ul {
+            list-style: none;
+        }
+        
+        /* Header Styles */
+        .legal-header {
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.9), rgba(37, 99, 235, 0.8)), url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            text-align: center;
+            padding: 150px 20px;
+            position: relative;
+        }
+        
+        .legal-header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 25px;
+            line-height: 1.2;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        .legal-header p {
+            font-size: 1.25rem;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            opacity: 0.9;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: var(--accent-color);
+            color: white;
+            padding: 15px 35px;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+            background: #c81a42;
+        }
+        
+        .btn-primary {
+            background: var(--primary-color);
+        }
+        
+        .btn-primary:hover {
+            background: var(--secondary-color);
+        }
+        
+        /* Section Styles */
+        .section-title {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 2.5rem;
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--accent-color);
+            border-radius: 2px;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 60px;
+            font-size: 1.1rem;
+            color: var(--text-light);
+        }
+        
+        /* Services Section */
+        .services-section {
+            background: white;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 40px 30px;
+            box-shadow: var(--box-shadow);
+            border-top: 4px solid var(--primary-color);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .service-card h3 {
+            color: var(--dark-color);
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .service-card h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: var(--primary-color);
+        }
+        
+        .service-card ul {
+            padding-left: 0;
+        }
+        
+        .service-card li {
+            margin-bottom: 12px;
+            position: relative;
+            padding-left: 25px;
+            line-height: 1.5;
+        }
+        
+        .service-card li:before {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            top: 2px;
+            color: var(--primary-color);
+            font-size: 0.9rem;
+        }
+        
+        /* How We Work Section - Enhanced */
+        .how-we-work {
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .how-we-work:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.03;
+            z-index: 0;
+        }
+        
+        .process-container {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .process-image {
+            flex: 1;
+            min-width: 300px;
+            position: relative;
+        }
+        
+        .process-image img {
+            border-radius: var(--border-radius);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+        }
+        
+        .process-image:hover img {
+            transform: scale(1.02);
+        }
+        
+        .process-content {
+            flex: 1;
+            text-align: left;
+        }
+        
+        .process-highlight {
+            background: white;
+            padding: 40px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            position: relative;
+            border-left: 5px solid var(--primary-color);
+        }
+        
+        .process-highlight:before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            border: 2px dashed rgba(37, 99, 235, 0.3);
+            border-radius: var(--border-radius);
+            pointer-events: none;
+        }
+        
+        .process-highlight p {
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+            line-height: 1.8;
+            color: var(--text-color);
+        }
+        
+        .process-features {
+            margin-top: 30px;
+        }
+        
+        .process-features li {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            position: relative;
+            padding-left: 40px;
+        }
+        
+        .feature-icon {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 30px;
+            height: 30px;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+        }
+        
+        .feature-text {
+            font-size: 1rem;
+            color: var(--text-color);
+        }
+        
+        /* Documents Section */
+        .documents-section {
+            background: white;
+        }
+        
+        .documents-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .document-card {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 40px 25px;
+            box-shadow: var(--box-shadow);
+            text-align: center;
+            transition: var(--transition);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        .document-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        
+        .document-icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 25px;
+        }
+        
+        .document-card h3 {
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        
+        .document-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+        
+        /* Disclaimer Section */
+        .disclaimer {
+            background: #fff8e1;
+            padding: 30px;
+            border-left: 4px solid #ffc107;
+            margin: 50px 0;
+            border-radius: var(--border-radius);
+        }
+        
+        .disclaimer h3 {
+            margin-bottom: 15px;
+            color: #ff8f00;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .disclaimer h3 i {
+            font-size: 1.5rem;
+        }
+        
+        .disclaimer p {
+            line-height: 1.7;
+        }
+        
+        /* CTA Section */
+        .legal-cta {
+            text-align: center;
+            padding: 100px 20px;
+            background: linear-gradient(135deg, var(--dark-color), var(--primary-color));
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .legal-cta:before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+        }
+        
+        .legal-cta:after {
+            content: '';
+            position: absolute;
+            bottom: -80px;
+            left: -80px;
+            width: 300px;
+            height: 300px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+        }
+        
+        .legal-cta .container {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .legal-cta h2 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .legal-cta p {
+            max-width: 700px;
+            margin: 0 auto 40px;
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .legal-header h1 {
+                font-size: 2.8rem;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
+            
+            .process-container {
+                flex-direction: column;
+                gap: 30px;
+            }
+            
+            .process-image {
+                width: 100%;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .legal-header {
+                padding: 100px 20px;
+            }
+            
+            .legal-header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .process-highlight {
+                padding: 30px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .legal-header {
+                padding: 80px 20px;
+            }
+            
+            .legal-header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .legal-header p {
+                font-size: 1rem;
+            }
+            
+            .btn {
+                padding: 12px 25px;
+                font-size: 0.9rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .service-card, .process-highlight {
+                padding: 25px 20px;
+            }
+            
+            .feature-icon {
+                width: 25px;
+                height: 25px;
+                font-size: 0.8rem;
+            }
+            
+            .process-features li {
+                padding-left: 35px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Legal Process Header -->
+    <header class="legal-header">
+        <div class="container">
+            <h1>Government & Legal Process Assistance</h1>
+            <p>Navigating official procedures can be complex. KiteGlobal helps simplify government processes and legal documentation requirements with expert guidance and support.</p>
+            <a href="Contact.html" class="btn">Request Assistance</a>
+        </div>
+    </header>
+    
+    <!-- Services Section -->
+    <section class="services-section">
+        <div class="container">
+            <h2 class="section-title">Our Assistance Services</h2>
+            <p class="section-subtitle">Comprehensive support for all your government and legal documentation needs</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Document Preparation</h3>
+                    <ul>
+                        <li>Guidance on required documents for various processes</li>
+                        <li>Checklists for complete application packages</li>
+                        <li>Organization of paperwork</li>
+                        <li>Verification of document completeness</li>
+                        <li>Template provision for common forms</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <h3>Government Coordination</h3>
+                    <ul>
+                        <li>Liaison with relevant government departments</li>
+                        <li>Appointment scheduling with authorities</li>
+                        <li>Status tracking of applications</li>
+                        <li>Follow-up on pending matters</li>
+                        <li>Department-specific requirement guidance</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <h3>Document Authentication</h3>
+                    <ul>
+                        <li>Notarization assistance</li>
+                        <li>Document attestation guidance</li>
+                        <li>Translation coordination</li>
+                        <li>Apostille services information</li>
+                        <li>Embassy legalization support</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- How We Work Section -->
+    <section class="how-we-work">
+        <div class="container">
+            <h2 class="section-title">How We Work</h2>
+            <p class="section-subtitle">Our structured approach to simplifying complex government processes</p>
+            
+            <div class="process-container">
+                <div class="process-image">
+                    <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Our process">
+                </div>
+                
+                <div class="process-content">
+                    <div class="process-highlight">
+                        <p>We assist to manage and navigate official processes involving legal documentation and government procedures. Our support includes:</p>
+                        
+                        <ul class="process-features">
+                            <li>
+                                <span class="feature-icon"><i class="fas fa-file-alt"></i></span>
+                                <span class="feature-text">Guidance on preparing and organizing required documents</span>
+                            </li>
+                            <li>
+                                <span class="feature-icon"><i class="fas fa-building"></i></span>
+                                <span class="feature-text">Coordination with relevant government departments</span>
+                            </li>
+                            <li>
+                                <span class="feature-icon"><i class="fas fa-stamp"></i></span>
+                                <span class="feature-text">Assistance with notarization, attestation, and translations</span>
+                            </li>
+                            <li>
+                                <span class="feature-icon"><i class="fas fa-balance-scale"></i></span>
+                                <span class="feature-text">Referrals or direction on where to seek legal advice (if needed)</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Documents Section -->
+    <section class="documents-section">
+        <div class="container">
+            <h2 class="section-title">Common Documents We Assist With</h2>
+            <p class="section-subtitle">Expert guidance for preparing and processing critical documents</p>
+            
+            <div class="documents-grid">
+                <div class="document-card">
+                    <div class="document-icon">
+                        <i class="fas fa-passport"></i>
+                    </div>
+                    <h3>Passports & Visas</h3>
+                    <p>Application support for travel and immigration documents</p>
+                </div>
+                
+                <div class="document-card">
+                    <div class="document-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>Property Documents</h3>
+                    <p>Deeds, titles, and property registration assistance</p>
+                </div>
+                
+                <div class="document-card">
+                    <div class="document-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3>Certificates</h3>
+                    <p>Birth, marriage, death, and other civil documents</p>
+                </div>
+                
+                <div class="document-card">
+                    <div class="document-icon">
+                        <i class="fas fa-gavel"></i>
+                    </div>
+                    <h3>Legal Affidavits</h3>
+                    <p>Preparation guidance for sworn statements</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Disclaimer Section -->
+    <section class="container">
+        <div class="disclaimer">
+            <h3><i class="fas fa-exclamation-triangle"></i> Important Notice</h3>
+            <p><strong>We are not a law firm and do not provide legal advice, representation, or legal consultancy services.</strong> Our assistance is limited to procedural guidance and document preparation support. For legal advice, we recommend consulting with a licensed attorney in the relevant jurisdiction.</p>
+        </div>
+    </section>
+    
+    <!-- CTA Section -->
+    <section class="legal-cta" id="assistance">
+        <div class="container">
+            <h2>Need Expert Help With Government Processes?</h2>
+            <p>Our specialists are ready to guide you through complex bureaucratic procedures and documentation requirements with personalized support.</p>
+            <a href="Contact.html" class="btn btn-primary">Get Assistance Now</a>
+        </div>
+    </section>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,1192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Visa Services | KiteGLobalKG</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Global Styles */
+        :root {
+            --primary: #0066cc;
+            --secondary: #ffcc00;
+            --dark: #003366;
+            --light: #f8f9fa;
+            --accent: #ff6b6b;
+            --text: #333333;
+            --text-light: #666666;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            line-height: 1.7;
+            color: var(--text);
+            background-color: #ffffff;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(0, 51, 102, 0.8), rgba(0, 102, 204, 0.8)), url('https://images.unsplash.com/photo-1506929562872-bb421503ef21?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            height: 100vh;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            padding: 0 20px;
+            transform: translateY(20px);
+            opacity: 0;
+            animation: fadeInUp 1s ease forwards 0.3s;
+        }
+        
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        }
+        
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: var(--dark);
+            padding: 15px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            color: var(--dark);
+        }
+        
+        .btn:active {
+            transform: translateY(1px);
+        }
+        
+        .btn:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transform: translateX(-100%);
+            transition: transform 0.6s ease;
+        }
+        
+        .btn:hover:after {
+            transform: translateX(100%);
+        }
+        
+        .scroll-down {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            font-size: 24px;
+            animation: bounce 2s infinite;
+            cursor: pointer;
+        }
+        
+        /* Visa Services Section */
+        .visa-services {
+            padding: 100px 0;
+            background-color: var(--light);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--dark);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 3px;
+            background: var(--secondary);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .section-title p {
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .service-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+        }
+        
+        .service-img {
+            height: 220px;
+            overflow: hidden;
+        }
+        
+        .service-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+        }
+        
+        .service-card:hover .service-img img {
+            transform: scale(1.1);
+        }
+        
+        .service-content {
+            padding: 25px;
+            position: relative;
+        }
+        
+        .service-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+        
+        .service-content p {
+            color: var(--text-light);
+            margin-bottom: 20px;
+        }
+        
+        .learn-more {
+            color: var(--primary);
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            transition: all 0.3s;
+        }
+        
+        .learn-more i {
+            margin-left: 5px;
+            transition: transform 0.3s;
+        }
+        
+        .learn-more:hover {
+            color: var(--accent);
+        }
+        
+        .learn-more:hover i {
+            transform: translateX(5px);
+        }
+        
+        .service-badge {
+            position: absolute;
+            top: -15px;
+            right: 20px;
+            background: var(--accent);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);
+        }
+        
+        /* Visa Process Section */
+        .visa-process {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .visa-process:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://www.transparenttextures.com/patterns/brushed-alum.png');
+            opacity: 0.05;
+            pointer-events: none;
+        }
+        
+        .process-steps {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-top: 60px;
+            position: relative;
+        }
+        
+        .process-steps:before {
+            content: '';
+            position: absolute;
+            top: 25px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            z-index: 1;
+        }
+        
+        .step {
+            flex: 1;
+            min-width: 200px;
+            text-align: center;
+            padding: 0 15px;
+            margin-bottom: 40px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .step-number {
+            background: white;
+            color: var(--primary);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 24px;
+            font-weight: bold;
+            border: 3px solid var(--primary);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+        }
+        
+        .step:hover .step-number {
+            background: var(--primary);
+            color: white;
+            transform: scale(1.1);
+        }
+        
+        .step h4 {
+            margin-bottom: 15px;
+            color: var(--dark);
+            font-size: 1.2rem;
+        }
+        
+        .step p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+        
+        /* Testimonials Section */
+        .testimonials {
+            padding: 100px 0;
+            background-color: white;
+        }
+        
+        .testimonial-slider {
+            max-width: 800px;
+            margin: 50px auto 0;
+            position: relative;
+        }
+        
+        .testimonial {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        .testimonial.active {
+            display: block;
+        }
+        
+        .testimonial-text {
+            font-size: 1.1rem;
+            font-style: italic;
+            color: var(--text);
+            margin-bottom: 20px;
+            position: relative;
+        }
+        
+        .testimonial-text:before,
+        .testimonial-text:after {
+            content: '"';
+            font-size: 2rem;
+            color: var(--secondary);
+            opacity: 0.5;
+        }
+        
+        .testimonial-text:before {
+            margin-right: 5px;
+        }
+        
+        .testimonial-text:after {
+            margin-left: 5px;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .author-img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 15px;
+        }
+        
+        .author-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .author-info h5 {
+            font-size: 1.1rem;
+            color: var(--dark);
+            margin-bottom: 5px;
+        }
+        
+        .author-info p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+        
+        .testimonial-nav {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+        
+        .testimonial-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #ddd;
+            margin: 0 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .testimonial-dot.active {
+            background: var(--primary);
+            transform: scale(1.2);
+        }
+        
+        /* FAQ Section */
+        .faq {
+            padding: 100px 0;
+            background-color: var(--light);
+        }
+        
+        .faq-list {
+            max-width: 800px;
+            margin: 50px auto 0;
+        }
+        
+        .faq-item {
+            margin-bottom: 15px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            background: white;
+        }
+        
+        .faq-question {
+            background-color: white;
+            padding: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s;
+        }
+        
+        .faq-question:hover {
+            background-color: #f9f9f9;
+        }
+        
+        .faq-question.active {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .faq-question i {
+            transition: transform 0.3s;
+        }
+        
+        .faq-question.active i {
+            transform: rotate(180deg);
+        }
+        
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out, padding 0.5s ease;
+            background: white;
+        }
+        
+        .faq-answer.show {
+            padding: 20px;
+            max-height: 500px;
+        }
+        
+        /* CTA Section */
+        .cta {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--primary), var(--dark));
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta:before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            left: -50px;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .cta:after {
+            content: '';
+            position: absolute;
+            bottom: -80px;
+            right: -80px;
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .cta p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            position: relative;
+            z-index: 1;
+            opacity: 0.9;
+        }
+        
+        .cta .btn {
+            position: relative;
+            z-index: 1;
+            background: white;
+            color: var(--primary);
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0) translateX(-50%);
+            }
+            40% {
+                transform: translateY(-20px) translateX(-50%);
+            }
+            60% {
+                transform: translateY(-10px) translateX(-50%);
+            }
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 992px) {
+            .hero-content h1 {
+                font-size: 2.8rem;
+            }
+            
+            .services-grid {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            }
+            
+            .process-steps {
+                flex-direction: column;
+            }
+            
+            .process-steps:before {
+                display: none;
+            }
+            
+            .step {
+                margin-bottom: 30px;
+                display: flex;
+                align-items: center;
+                text-align: left;
+            }
+            
+            .step-number {
+                margin: 0 20px 0 0;
+                flex-shrink: 0;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero-content p {
+                font-size: 1rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero {
+                min-height: 500px;
+            }
+            
+            .hero-content h1 {
+                font-size: 1.8rem;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .step {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .step-number {
+                margin: 0 auto 15px;
+            }
+        }
+
+        /* New Beautiful Design Elements */
+        .floating-shapes {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .shape {
+            position: absolute;
+            opacity: 0.1;
+            background: var(--primary);
+            border-radius: 50%;
+            filter: blur(40px);
+        }
+
+        .shape-1 {
+            width: 300px;
+            height: 300px;
+            top: -100px;
+            right: -100px;
+            background: var(--accent);
+        }
+
+        .shape-2 {
+            width: 200px;
+            height: 200px;
+            bottom: -50px;
+            left: -50px;
+            background: var(--secondary);
+        }
+
+        .section-divider {
+            width: 100%;
+            height: 100px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M1200 120L0 16.48 0 0 1200 0 1200 120z" fill="%23f8f9fa"></path></svg>');
+            background-size: cover;
+            margin-top: -1px;
+        }
+
+        .section-divider.dark {
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M1200 120L0 16.48 0 0 1200 0 1200 120z" fill="%23e4e8eb"></path></svg>');
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="floating-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+        </div>
+        <div class="hero-content">
+            <h1>World-Class <span class="gradient-text">Visa Services</span></h1>
+            <p>Let our visa experts handle the complex paperwork while you dream about your journey. We make visa processing smooth, fast, and stress-free.</p>
+            <a href="#services" class="btn">Explore Our Services</a>
+        </div>
+        <div class="scroll-down" id="scrollDown">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+    
+    <div class="section-divider"></div>
+    
+    <section id="services" class="visa-services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Premium <span class="gradient-text">Visa Services</span></h2>
+                <p>We specialize in all types of visa applications with a success rate of over 98%. Choose the service that matches your travel needs.</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Tourist Visa">
+                    </div>
+                    <div class="service-content">
+                        <span class="service-badge">Popular</span>
+                        <h3>Tourist Visa</h3>
+                        <p>Experience seamless processing for your vacation visas with our expert guidance and document verification.</p>
+                        <a href="Contact.html" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Business Visa">
+                    </div>
+                    <div class="service-content">
+                        <h3>Business Visa</h3>
+                        <p>Fast-track processing for your professional trips with priority appointments and corporate documentation.</p>
+                        <a href="Contact.html" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-img">
+                      <img src="https://images.unsplash.com/photo-1558021212-51b6ecfa0db9?auto=format&fit=crop&w=1000&q=80" alt="Student visa">
+nt 
+
+                    </div>
+                    <div class="service-content">
+                        <h3>Student Visa</h3>
+                        <p>Comprehensive support for your educational journey abroad, including admission letter verification.</p>
+                        <a href="Contact.html" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Work Visa">
+                    </div>
+                    <div class="service-content">
+                        <span class="service-badge">Hot</span>
+                        <h3>Work Visa</h3>
+                        <p>End-to-end processing of employment visas with contract review and employer verification.</p>
+                        <a href="Contact.html" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Family Visa">
+                    </div>
+                    <div class="service-content">
+                        <h3>Family Visa</h3>
+                        <p>Reunite with your loved ones abroad with our family reunion visa processing services.</p>
+                        <a href="Contact.html" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Express Visa">
+                    </div>
+                    <div class="service-content">
+                        <span class="service-badge">Fast</span>
+                        <h3>Express Visa Processing</h3>
+                        <p>Need a visa urgently? Our premium express service gets your visa processed in record time.</p>
+                        <a href="Contact.html" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <div class="section-divider dark"></div>
+    
+    <section class="visa-process">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Simple <span class="gradient-text">4-Step Process</span></h2>
+                <p>We've streamlined the visa application process to make it as simple and stress-free as possible for you.</p>
+            </div>
+            
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h4>Free Consultation</h4>
+                    <p>Discuss your travel plans with our visa experts to determine the best visa options</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h4>Document Preparation</h4>
+                    <p>We provide a customized checklist and help prepare all required documents</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h4>Application Submission</h4>
+                    <p>Our team completes and submits your application with the embassy/consulate</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h4>Visa Delivery</h4>
+                    <p>Receive your approved visa with our complimentary delivery service</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <div class="section-divider"></div>
+    
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>What Our <span class="gradient-text">Clients Say</span></h2>
+                <p>Hear from travelers who've used our visa services for their international journeys.</p>
+            </div>
+            
+            <div class="testimonial-slider">
+                <div class="testimonial active">
+                    <div class="testimonial-text">
+                        GlobalVisa made my student visa process so easy! They guided me through every step and even helped with my university documentation. I got my visa approved in just 2 weeks!
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-img">
+                            <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Sarah Johnson">
+                        </div>
+                        <div class="author-info">
+                            <h5>Sarah Johnson</h5>
+                            <p>Student Visa to Canada</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial">
+                    <div class="testimonial-text">
+                        As a business owner, I don't have time to deal with visa paperwork. GlobalVisa handles all our corporate travel visas efficiently. Their express service saved us last minute!
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-img">
+                            <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Michael Chen">
+                        </div>
+                        <div class="author-info">
+                            <h5>Michael Chen</h5>
+                            <p>Business Visas for Team</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial">
+                    <div class="testimonial-text">
+                        After two previous rejections, I was losing hope. GlobalVisa analyzed my case, fixed the issues, and got my family visa approved. They're truly experts in complex cases.
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-img">
+                            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Amina Patel">
+                        </div>
+                        <div class="author-info">
+                            <h5>Amina Patel</h5>
+                            <p>Family Visa to UK</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-nav">
+                    <div class="testimonial-dot active" data-index="0"></div>
+                    <div class="testimonial-dot" data-index="1"></div>
+                    <div class="testimonial-dot" data-index="2"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <div class="section-divider dark"></div>
+    
+    <section class="faq">
+        <div class="container">
+            <div class="section-title">
+                <h2>Frequently Asked <span class="gradient-text">Questions</span></h2>
+                <p>Find answers to common questions about our visa services.</p>
+            </div>
+            
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How long does visa processing usually take?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Processing times vary depending on the destination country and type of visa. Typically, tourist visas take 5-15 working days, while work and student visas may take longer (4-8 weeks). We offer express processing for urgent cases at an additional fee, which can reduce processing time by 30-50%.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What documents do I need to provide?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>The required documents vary by visa type and destination country. Generally, you'll need:</p>
+                        <ul>
+                            <li>Valid passport (with at least 6 months validity)</li>
+                            <li>Passport-sized photos meeting specific requirements</li>
+                            <li>Completed application forms</li>
+                            <li>Proof of travel arrangements (flight itinerary, hotel bookings)</li>
+                            <li>Financial documents (bank statements, sponsorship letters)</li>
+                            <li>For work/student visas: employment offer/acceptance letter</li>
+                        </ul>
+                        <p>Our consultants will provide you with a complete, customized checklist for your specific case.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Do you guarantee visa approval?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>While we cannot guarantee approval as visa decisions are made by government authorities, we significantly increase your chances by ensuring your application is complete, accurate, and meets all requirements. Our experts review all documents before submission to minimize the risk of rejection. Our current success rate is over 98% for first-time applications.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Can you help if my visa application was previously rejected?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, we specialize in handling previously refused cases. Our team will:</p>
+                        <ol>
+                            <li>Analyze the reasons for your previous rejection</li>
+                            <li>Address all issues in your new application</li>
+                            <li>Prepare a stronger case with additional supporting documents</li>
+                            <li>Provide guidance on any required appeals or reconsiderations</li>
+                        </ol>
+                        <p>We have an 85% success rate with previously refused applications.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What makes your service different from applying directly?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Our service provides several key advantages:</p>
+                        <ul>
+                            <li><strong>Expert Guidance:</strong> Our consultants know the latest requirements and common pitfalls</li>
+                            <li><strong>Document Review:</strong> We check all documents for compliance before submission</li>
+                            <li><strong>Time Savings:</strong> We handle all paperwork and embassy communications</li>
+                            <li><strong>Higher Approval Rates:</strong> Properly prepared applications have much better success</li>
+                            <li><strong>Personalized Service:</strong> Dedicated consultant for your case</li>
+                            <li><strong>Updates & Tracking:</strong> Regular updates on your application status</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <div class="section-divider"></div>
+    
+    <section class="cta">
+        <div class="floating-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+        </div>
+        <div class="container">
+            <h2>Ready to Begin Your Visa Application?</h2>
+            <p>Contact our visa experts today for a free consultation and personalized service plan.</p>
+            <a href="Contact.html" class="btn">Get Started Now</a>
+        </div>
+    </section>
+    
+    <script>
+        // Scroll Down Button
+        const scrollDown = document.getElementById('scrollDown');
+        scrollDown.addEventListener('click', () => {
+            window.scrollTo({
+                top: document.getElementById('services').offsetTop - 80,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Testimonial Slider
+        const testimonials = document.querySelectorAll('.testimonial');
+        const dots = document.querySelectorAll('.testimonial-dot');
+        let currentTestimonial = 0;
+        
+        function showTestimonial(index) {
+            testimonials.forEach(testimonial => testimonial.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+            
+            testimonials[index].classList.add('active');
+            dots[index].classList.add('active');
+            currentTestimonial = index;
+        }
+        
+        dots.forEach(dot => {
+            dot.addEventListener('click', () => {
+                showTestimonial(parseInt(dot.getAttribute('data-index')));
+            });
+        });
+        
+        // Auto-rotate testimonials
+        setInterval(() => {
+            let nextIndex = (currentTestimonial + 1) % testimonials.length;
+            showTestimonial(nextIndex);
+        }, 5000);
+        
+        // FAQ Accordion
+        const faqQuestions = document.querySelectorAll('.faq-question');
+        
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const isActive = question.classList.contains('active');
+                
+                // Close all answers first
+                document.querySelectorAll('.faq-answer').forEach(ans => {
+                    ans.classList.remove('show');
+                });
+                document.querySelectorAll('.faq-question').forEach(q => {
+                    q.classList.remove('active');
+                });
+                
+                // Open clicked answer if it wasn't active
+                if (!isActive) {
+                    question.classList.add('active');
+                    answer.classList.add('show');
+                }
+            });
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Animation on scroll
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.service-card, .step, .faq-item');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.2;
+                
+                if (elementPosition < screenPosition) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        }
+        
+        // Set initial state for animated elements
+        document.querySelectorAll('.service-card, .step, .faq-item').forEach(element => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(20px)';
+            element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        });
+        
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
+
+        // Create floating shapes dynamically
+        function createFloatingShapes() {
+            const container = document.querySelector('.hero .floating-shapes');
+            
+            for (let i = 0; i < 5; i++) {
+                const shape = document.createElement('div');
+                shape.classList.add('shape');
+                
+                // Random size between 50 and 200px
+                const size = Math.floor(Math.random() * 150) + 50;
+                
+                // Random position
+                const left = Math.floor(Math.random() * 100);
+                const top = Math.floor(Math.random() * 100);
+                
+                // Random color from our palette
+                const colors = ['var(--primary)', 'var(--secondary)', 'var(--accent)'];
+                const color = colors[Math.floor(Math.random() * colors.length)];
+                
+                // Random opacity between 0.05 and 0.2
+                const opacity = (Math.random() * 0.15) + 0.05;
+                
+                // Apply styles
+                shape.style.width = `${size}px`;
+                shape.style.height = `${size}px`;
+                shape.style.left = `${left}%`;
+                shape.style.top = `${top}%`;
+                shape.style.background = color;
+                shape.style.opacity = opacity;
+                shape.style.filter = `blur(${size/3}px)`;
+                
+                // Random animation
+                const duration = Math.floor(Math.random() * 30) + 20;
+                shape.style.animation = `float ${duration}s infinite ease-in-out`;
+                
+                container.appendChild(shape);
+            }
+        }
+
+        // Call the function to create shapes
+        createFloatingShapes();
+
+        // Add keyframes for floating animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes float {
+                0%, 100% {
+                    transform: translate(0, 0);
+                }
+                25% {
+                    transform: translate(5%, 5%);
+                }
+                50% {
+                    transform: translate(10%, 0);
+                }
+                75% {
+                    transform: translate(5%, -5%);
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
